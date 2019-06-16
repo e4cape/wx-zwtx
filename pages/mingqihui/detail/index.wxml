@@ -1,0 +1,113 @@
+<!--店铺大图-->
+<view class='shop-banner'><image src='{{storeBanner}}' mode="widthFix"></image></view>
+<!--店铺介绍-->
+<view class='shop-intro'>
+  <view class='content'>
+    <image src='{{storeLogo}}'></image>
+    <view class='info'>
+      <view><text>{{storeName}}</text></view>
+      <view><text>联系人：{{contactsName}}</text><text>电话：{{contactsPhone}}</text></view>
+      <view><text>地址：{{address}}</text></view>
+    </view>
+  </view>
+  <view class='detail' style="height: {{height}}; ">{{storeIntroduce}}</view>
+  <view hidden='{{mHidden}}' bindtap='open' class='opening' data-height="auto">展开</view>
+  <view hidden='{{mmHidden}}' bindtap='close' class='opening' data-height="120rpx">关闭</view>
+</view>
+<view class='index-border'></view>
+<!--店铺文化-->
+<view class='shop-cate'>
+  <view bindtap='storePromote' data-status="0" class="{{status == 0 ? 'on' : ''}}"><text> 促销政策</text></view>
+  <view bindtap='storeNorm' data-status="1" class="{{status == 1 ? 'on' : ''}}"><text>产品指标</text></view>
+</view>
+<block wx:if="{{status == 0}}">
+<view class='shop-culture' style="height: {{gaodu}}; ">
+<block wx:for="{{storePromote}}" wx:key="">
+<image mode="widthFix" style='width:100%;' src='{{item}}'></image>
+</block>
+</view>
+</block>
+<block wx:if="{{status == 1}}">
+<view class='shop-culture'>
+<block wx:for="{{storeNorm}}" wx:key="">
+<image mode="widthFix" style='width:100%;' src='{{item}}'></image>
+</block>
+</view>
+</block>
+<view hidden='{{mhHidden}}' bindtap='opening' class='open' data-gaodu="auto">展开</view>
+  <view hidden='{{hhHidden}}' bindtap='closeing' class='open' data-gaodu="120rpx">关闭</view>
+<view class='index-border'></view>
+<!--产品信息-->
+<view class='product-info'>
+  <image src='{{goodsImages}}'></image>
+  <view class='product-text'>
+    <view>{{goodsName}}</view>
+    <view>
+    <block wx:if="{{new_specNames != ''}}">
+    <text>已选：</text><text class='red'>{{new_specNames}}</text>
+    </block>
+    <block wx:if="{{sdGoodsStorage != ''}}">
+    <text class='right'>库存：{{sdGoodsStorage}}{{unit}}</text>
+    </block>
+    </view>
+    <view class='product-margin'>
+    <text class='red'>￥{{goodsPrice}}</text><text>/{{unit}}</text>
+    <block wx:if="{{sdGoodsMarketPrice != ''}}">
+    <text class='line'>￥{{sdGoodsMarketPrice}}/{{unit}}</text>
+    </block>
+    <text class='right'>（含税价）</text>
+    </view>
+  </view>
+</view>
+<view class='shop-product'>
+<block wx:for="{{specTypeList}}" wx:key="specKey">
+  <view class='list'>
+    <view class='info'>{{item.stName}}</view>
+    <view class='label'>
+    <block wx:for="{{item.specList}}" wx:for-index="key" wx:key="specK">
+      <button bindtap='select' data-value='{{item.specName}}' data-specid="{{item.specId}}" class="{{item.select == 1 ? 'on' : ''}}">{{item.specName}}</button>
+    </block>
+    </view>
+  </view>
+</block>
+<block wx:if="{{goodsCateId == 1}}">
+  <view class='list'>
+    <view class='info'>规格</view>
+    <view class='label'>
+      <input type="number" class='input' name="number" placeholder="请输入规格" bindinput='cartGoodsNorms' value="{{cartGoodsNorms}}" />
+      <text class='dw'>mm</text>
+    </view>
+  </view>
+  </block>
+  <view class='list'>
+    <view class='info'>数量</view>
+    <view class='label'>
+      <text class='jian' bindtap='jian' data-goodsnum="{{goodsNum}}" data-goodsid="{{goodsId}}" data-goodsstoreid="{{goodsStoreId}}">-</text>
+      <input type="number" bindinput='inputGoodsNum' class="goods_num" value="{{goodsNum}}" ></input>
+      <text class='jia' bindtap='jia' data-goodsnum="{{goodsNum}}" data-goodsid="{{goodsId}}" data-goodsstoreid="{{goodsStoreId}}">+</text>
+      <text class='dw'>吨</text>
+    </view>
+  </view>
+</view>
+<!--提交按钮-->
+<view class='shop-btn'>
+  <navigator open-type='switchTab' url='/pages/member/cart/index' class='btn-image'><image src='/static/images/icon/cart.png'></image></navigator>
+  <view class="operate">
+    <view bindtap='addcart' class='addcart'>加入购物车</view>
+    <view bindtap='buy' class='buy'>立即购买</view>
+  </view>
+</view>
+<!--微信授权登录-->
+<view>
+<modal title='微信授权登录' cancel-text='' confirm-text=''  hidden="{{wxHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+  <view wx:if="{{canIUse}}">
+  <view class='wx'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='warn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+  </button>
+</view>
+</modal> 
+</view>

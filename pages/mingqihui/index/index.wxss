@@ -1,0 +1,23 @@
+@import "/utils/wxParse/wxParse.wxss";
+/*资讯广告*/
+.news-banner{margin: 0rpx auto;}
+.news-banner image{ width:100%; height: 320rpx; }
+/*资讯导航*/
+.news-nav{margin:0rpx auto; height: 80rpx; line-height: 80rpx; border-bottom:2rpx solid #ccc;}
+.news-nav text{ width:25%; text-align: center; color: #666666; font-size: 34rpx; float: left;}
+.news-nav .on{ color: #DD2B2B;}
+/*资讯列表*/
+.news-list{ margin:10rpx auto; height: auto; clear:both;}
+.news-list .news-info{ height: 180rpx; margin: 20rpx 20rpx; border-bottom: 2rpx solid #cccccc;}
+.news-list .news-info .news-common{ float: left;}
+.news-list .news-info .news-image{ width:22%;}
+.news-list .news-info image{ width:160rpx; height:160rpx; border: 1px dotted #cccccc;}
+.news-list .news-info .news-title{ width:72%; margin-left: 20rpx;}
+.news-list .news-info .news-title .news-title-a{ color: #000000; font-size: 30rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+.news-list .news-info .news-title .news-title-b{ color: #999999; font-size: 24rpx;}
+.news-list .news-info .news-title .news-title-c{ color: #999999; font-size: 24rpx; padding-top: 10rpx;}
+.storeBox{width: 33%;margin-top: 20rpx;display: inline-block;}
+
+.storeBox .storeImg{width: 120rpx;height: 120rpx;}
+.storeBox .storeName{width: 150rpx;display: block;color:#666666;font-size: 30rpx;text-align: center;}
+.storeBoxLittle{width: 150rpx;margin: 0 auto;}

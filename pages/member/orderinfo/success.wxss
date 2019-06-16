@@ -1,0 +1,9 @@
+/* pages/member/orderinfo/success.wxss */
+.success{text-align: center; margin-top:200rpx;}
+.success view image{width: 154rpx; height: 154rpx;}
+.success .red{color: #DD2B2B; font-size: 32rpx; margin: 20rpx 0rpx;}
+.success .gray{ color: #666666; font-size: 26rpx; padding-left: 27%;}
+.success .gray navigator{ float: left; margin-right: 20rpx; width: 160rpx; height: 58rpx; line-height: 58rpx;}
+.success .gray .home{border: 2rpx solid #C1C1C1; color: #666666;}
+.success .gray view{ float: left; margin-right: 20rpx; width: 160rpx; height: 58rpx; line-height: 58rpx;}
+.success .gray .orderlist{background: #DD2B2B; color: #ffffff; border: 2rpx solid #DD2B2B; border-radius: 5rpx;}

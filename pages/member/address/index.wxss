@@ -1,0 +1,13 @@
+/* pages/member/address/index.wxss */
+/*地址管理*/
+.address{margin:20rpx 30rpx; color: #666666; font-size: 26rpx; border-bottom: 2rpx solid #D7D7D7; height: 168rpx;}
+.address view .name{ padding-right: 40rpx;font-size: 32rpx;}
+.address view .phone{ padding-right: 40rpx;}
+.address .address-info{ margin: 20rpx 0rpx;}
+.address view .left{float: left; width: 23%;}
+.address view .left checkbox {zoom:50%;}
+.address view .right{float: right;}
+.address view .right text{ padding-left: 30rpx;}
+/*新增地址*/
+.addAddress{height: 100rpx; line-height: 100rpx; width: 100%; text-align: center; position: fixed; bottom: 0; background-color: #DD2B2B; color: #ffffff; font-size: 28rpx;}
+

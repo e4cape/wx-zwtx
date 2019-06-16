@@ -1,0 +1,22 @@
+/*报价详细信息*/
+.offer-info{ height: 80rpx; line-height: 80rpx; margin: 0rpx 30rpx; border-bottom: 2rpx solid #D7D7D7FF;}
+.offer-info .info-text{float: left; color: #666666; font-size: 26rpx;}
+.offer-info .info-txt{float: right; color: #999999; font-size: 26rpx;}
+.offer-xinxi{ margin: 0rpx 30rpx; height:auto;}
+.offer-xinxi view{ height: 60rpx; line-height: 60rpx; color: #666666; font-size: 26rpx;}
+/*报价列表*/
+.offer-guidance{height: 80rpx; line-height: 80rpx; margin: 0rpx 30rpx; border-bottom: 2rpx solid #D7D7D7FF;}
+.offer-guidance .guidance-text{color: #AE3737; font-size: 26rpx;}
+.offer-guidance .guidance-txt{ color: #999999; font-size: 26rpx; padding-left:40rpx; }
+.offer-list{width: 100%; margin: 0rpx auto 100rpx;}
+.offer-list .offer-list-content{ height: 110rpx; border-bottom: 1px solid #cccccc; padding: 20rpx 0rpx; margin: 0rpx 30rpx;}
+.offer-list .offer-list-content .left{ float: left;}
+.offer-list .offer-list-content .left .text{ color: #666666; font-size: 28rpx; height: 40rpx;line-height: 40rpx;}
+.offer-list .offer-list-content .left .txt{ color: #666666; font-size: 26rpx; height: 40rpx;line-height: 40rpx;}
+.offer-list .offer-list-content .left .tet{ color: #999999; font-size: 20rpx; height: 40rpx;line-height: 40rpx;}
+.offer-list .offer-list-content .right{ float: right; height: 80rpx;}
+.offer-list .offer-list-content .right text{ float: left; border:2rpx solid #DD2B2B; color: #DD2B2B; border-radius:4rpx; font-size: 26rpx; width: 110rpx; height: 40rpx; line-height: 40rpx; text-align:center; margin: 70rpx 0rpx 0rpx 10rpx;}
+.offer-list .offer-list-content .text-remark {float: right; font-size: 26rpx; height: 40rpx; line-height: 40rpx; position:relative; left:125rpx;}
+.offer-list .offer-list-content .text-remark .remark{color: #DD2B2B;}
+/*色条*/
+.index-border{ width: 100%; height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDEDFF;}

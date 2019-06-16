@@ -1,0 +1,55 @@
+/*个人中心头相*/
+.user-image{ width:100%; height: 360rpx; margin: 0rpx auto; text-align: center;overflow: hidden;}
+.user-image .user-bg{width: 100%; height: 360rpx;-webkit-filter: blur(10px); }
+.user-image .user-pic{position: absolute; top:100rpx;left:0; right:0; margin: auto;z-index: 999}
+.user-image .user-pic image{width: 160rpx; height: 160rpx; }
+.user-image .user-pic view{color: #ffffff; font-size: 32rpx;}
+.user-image .user-pic button{width: 34%; background-color: #DD2B2B; color: #ffffff;}
+/*我的订单*/
+.order{ width:100%; height:100rpx; line-height: 100rpx; border-bottom: 2rpx solid #D7D7D7; }
+.order text{ float: left; padding-left: 30rpx; color: #666666; font-size: 28rpx;}
+.order image{ float: right; width: 15rpx; height:30rpx; padding: 40rpx 30rpx 0rpx 0rpx;}
+/*订单状态*/
+.order-state{ width: 100%;height: 110rpx; margin: 0rpx auto;}
+.order-state .state{ width: 25%; float: left; text-align: center; margin-top:25rpx; }
+.order-state .state image{width: 40rpx; height: 40rpx;}
+.order-state .state view{color: #666666; font-size: 26rpx;line-height: 18rpx}
+/*个人中心列表*/
+.user-list{ width:100%; height:100rpx; line-height: 100rpx; border-bottom: 2rpx solid #D7D7D7; }
+.user-list view .left{ float: left; padding-left: 30rpx; color: #666666; font-size: 28rpx;}
+.user-list view .left image{ width: 45rpx; height: 42rpx; position:relative; top: 10rpx; right: 10rpx;}
+.user-list view .right{ text-align: right; overflow: hidden;}
+.user-list view .right image{ width: 15rpx; height:30rpx; padding: 40rpx 30rpx 0rpx 0rpx;}
+.user-list view .right text{color: #999999;font-size: 26rpx; position: relative; right:40rpx; bottom: 8rpx;}
+/*色条*/
+.index-border{ width: 100%; height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}
+/*微信弹窗*/
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+}
+
+.header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}

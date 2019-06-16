@@ -1,0 +1,55 @@
+/*物流广告*/
+.wuliu-banner{ height: 300rpx; margin: 0rpx auto;}
+.wuliu-banner image{width: 100%; height: 300rpx;}
+/*物流面包屑*/
+.wuliu-nav{ height: 80rpx;line-height: 80rpx; background-color: #EDEDED; padding: 0rpx 30rpx;}
+.wuliu-nav .wuliu-text{ float: left; color: #999999;font-size: 26rpx;}
+.wuliu-nav .wuliu-txt{ float: right; color:#DD2B2B;font-size: 26rpx; }
+/*物流列表*/
+.wuliu-list{margin: 0rpx auto 100rpx;}
+.wuliu-list .wuliu-list-content{ height: 110rpx; border-bottom: 1px solid #cccccc; padding: 20rpx 0rpx; margin: 0rpx 30rpx;}
+.wuliu-list .wuliu-list-content .left{ float: left;}
+.wuliu-list .wuliu-list-content .left .text{ color: #666666; font-size: 28rpx; height: 40rpx;line-height: 40rpx;}
+.wuliu-list .wuliu-list-content .left .txt{ color: #666666; font-size: 26rpx; height: 40rpx;line-height: 40rpx;}
+.wuliu-list .wuliu-list-content .left .tet{ color: #999999; font-size: 20rpx; height: 40rpx;line-height: 40rpx;}
+.wuliu-list .wuliu-list-content .right{ float: right;}
+.wuliu-list .wuliu-list-content .right button{ background-color: #DD2B2B; border-radius:4rpx; color: #ffffff; font-size: 26rpx; padding: 4rpx 40rpx; margin-top: 20rpx;}
+/*弹框*/
+.modal modal view{overflow: hidden; margin-left:40rpx;}
+.modal modal view input{color: #999999; font-size: 26rpx; float: left; border: 2rpx solid #999999; height:80rpx; line-height: 80rpx; padding-left: 20rpx; margin:20rpx 0rpx; width: 68%;}
+.modal modal view text{color: #666666; font-size: 26rpx; float: left;  height:80rpx; line-height: 80rpx; padding-left: 20rpx; margin:20rpx 0rpx;}
+/*底部按钮*/
+.submit{height: 80rpx; line-height: 80rpx; position: fixed;bottom: 0; z-index: 9999;width: 100%; background:#fff;
+}
+.submit .release{width: 50%; float: left; text-align:center; background-color: #DD2B2B; color:#ffffff; font-size: 26rpx;}
+.submit .mywuliu{ width: 50%; float: left; text-align:center; color: #DD2B2B; font-size: 26rpx; border-top: 2rpx solid #DD2B2B;}
+/*微信弹窗*/
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+}
+
+.header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}

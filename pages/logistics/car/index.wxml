@@ -1,0 +1,38 @@
+<!--pages/logistics/car/index.wxml-->
+<view class='car'>
+<view class='car-long'>车长（最多选3个）</view>
+<view class='car-text'>
+<block wx:for="{{carLong}}" wx:key="">
+<text bindtap='carLong' data-value="{{item.name}}" data-selected="{{item.selected}}" class="{{item.selected == 1 ? 'on': ''}}">{{item.name}}</text>
+</block>
+  <!-- <text>5</text>
+  <text>6.2</text>
+  <text>6.8</text>
+  <text>7.7</text>
+  <text>8.2</text>
+  <text>8.7</text>
+  <text>9.6</text>
+  <text>11.7</text>
+  <text>12.5</text>
+  <text>13</text>
+  <text>15</text>
+  <text>16</text>
+  <text>17.5</text> -->
+</view>
+ <view class='car-type'>车型(最多选三个)</view>
+  <view class='car-text'>
+  <block wx:for="{{carType}}" wx:key="">
+  <text bindtap='carType' data-value="{{item.name}}" data-selected="{{item.selected}}" class="{{item.selected == 1 ? 'on': ''}}">{{item.name}}</text>
+  </block>
+  <!-- <text>高栏</text>
+  <text>厢式</text>
+  <text>集装箱</text>
+  <text>自卸</text>
+  <text>保温</text>
+  <text>高低板</text>
+  <text>面包车</text>
+  <text>棉被车</text>
+  <text>飞翼车</text> -->
+</view>
+</view>
+<button class="submit" bindtap='comfirm' type="warn">提交</button>

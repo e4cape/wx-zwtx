@@ -1,0 +1,22 @@
+<!--促销专区-->
+<view class='promotion-area'>
+<block wx:if="{{dataList != ''}}">
+  <block wx:for="{{dataList}}" wx:key="key">
+    <view class='cx-product' bindtap='detail' data-id="{{item.goodsId}}">
+      <view class='left'><image src='{{item.goodsDefaultImage}}'></image></view>
+      <view class='left content'>
+        <view class='text'>{{item.goodsName}}</view>
+        <view class='txt'>{{item.sdSpec2Name}}</view>
+        <view class='sk'>
+          <text class="stock">仅剩{{item.remainingStock}}{{item.unit}}</text>
+          <view class="percentage" style="width:{{item.percentage}}%;"></view>
+        </view>
+        <view class='red-line'><text class='red'>￥{{item.sdGoodsSellPrice}}</text><text class='line'>￥{{item.sdGoodsMarketPrice}}</text><text class='right'>立即抢购</text></view>
+      </view>
+    </view>
+  </block>
+</block>
+<block wx:else>
+    <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+</block>
+</view>

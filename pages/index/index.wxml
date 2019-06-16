@@ -1,0 +1,85 @@
+<view class="logo"><image class="img" src="/static/images/icon/logo.png"></image></view>
+<!--搜索  -->
+  <view class="search">
+    <navigator url="/pages/search/index">
+      <input class="input" placeholder='搜索商品或店铺' disabled></input>
+      <view class="searchbox"><image class="searchIcon" src="/static/images/icon/s.png"></image></view>
+    </navigator>
+  </view>
+  <!-- <view class="service" bindtap="service"><image class="img" src="/static/images/icon/k.png"></image></view> -->
+  <view class="service" ><contact-button type="default-light" session-from="weapp" id="contactButton"><image class="img" src="/static/images/icon/k.png"></image></contact-button></view>
+  <!-- 轮播图 -->
+  <view class="index-advs">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" style='height:{{height}}px;'>  
+         <block wx:for="{{bannerList}}" wx:key="key">  
+           <swiper-item>  
+              <navigator class='navigator' url="{{item.bannerUrl}}" hover-class="navigator-hover">  
+               <image mode='aspectFit' src="{{item.bannerImage}}" class="auto-img" bindload='setContainerHeight' />  
+              </navigator>  
+           </swiper-item>  
+         </block>  
+ </swiper>
+  </view>
+  <!--喇叭公告-->
+  <view class='horn'>
+    <image class="img" src="/static/images/icon/lb.png"></image>
+    <text>恭喜手机号139***0987顾客成功提货20吨，优惠1000元</text>
+  </view>
+  <!--导航分类  -->
+  <view class="navBar">
+  <block wx:for="{{dataCate}}" wx:key="">
+    <view class="navItem">
+    <view bindtap="cateClick" data-id="{{item.cateId}}" class="navigator">
+    <block wx:if="{{item.appPictureUrl}}">
+    <image src="{{item.appPictureUrl}}"></image>
+    </block>
+    <block wx:else>
+    <image src="{{appPictureUrl}}"></image>
+    </block>
+    <view class="cateName">
+    <text>{{item.cateName}}</text>
+    </view>
+    </view>
+    </view>
+  </block>
+  </view>
+  <!-- 促销专区小广告 -->
+  <view class='small-banner'>
+  <block wx:for="{{promotionBanner}}" wx:key="key">
+  <block wx:if="{{item.bannerSource == 2}}">
+  <view bindtap="promotion" data-id="{{item.bannerType}}"><image class="img" src="{{item.bannerImage}}"></image></view>
+  </block>
+  </block>
+  <!-- <navigator url='/pages/goods/promotion/index'><image class="img" src="/static/images/cxfl.png"></image></navigator>
+  <navigator url='/pages/goods/promotion/index'><image class="img" src="/static/images/cxsb.png"></image></navigator>
+  <navigator url='/pages/goods/promotion/index'><image class="img" src="/static/images/cxfz.png"></image></navigator> -->
+  </view>
+  <view class='index-border'></view>
+   <!-- 最新资讯 -->
+   <block wx:if="{{articleList != ''}}">
+      <view class='news'>
+          <view class='news-cate'><text class='best-news'> 最新资讯</text><navigator open-type="switchTab" url='/pages/news/index/index'><text class='news-more'>更多></text></navigator></view>
+          <block wx:for="{{articleList}}" wx:key="key" wx:index="index">
+              <view class='news-title' data-id="{{item.articleId}}" bindtap="newsClick"><text>{{index+1}}. {{item.articleTitle}}</text></view>
+          </block>
+      </view>
+      <view class='index-border'></view>
+  </block>
+     <!-- 成品纸 -->
+     <block wx:for="{{dataCate}}" wx:key="">
+  <view class='products'>
+    <view bindtap="cateClick" data-id="{{item.cateId}}" class='products-cate'><text class='products-paper'>{{item.cateName}}</text><text class='products-more'>更多></text></view>
+    <view class='products-content'>
+    <block wx:for="{{item.goodsList}}" wx:key="">
+      <view class='goods' data-goodsid="{{item.goodsId}}" data-storeid="{{item.goodsStoreId}}" bindtap="storeClick">
+        <image class="img" src="{{item.goodsDefaultImage}}"></image>
+        <view>
+           <text class='price'>￥{{item.goodsPrice}}</text><text>/{{item.unit}}</text>
+        </view>
+        <text>{{item.goodsName}}</text>
+      </view>
+    </block>
+    </view>
+  </view>
+  <view class='index-border'></view>
+  </block>

@@ -1,0 +1,13 @@
+<!--新增地址资料-->
+<view class='release'>
+  <view><text>收货人</text><input bindchange="addressee" name="addressee" placeholder="请输入收货人名称" value="{{addressee}}" /></view>
+  <view><text>联系电话</text><input bindchange="phone" name="phone" placeholder="请输入收货人电话" value="{{phone}}" /></view>
+  <picker mode="region" bindchange="regionId" value="{{regionId}}" custom-item="{{customItem}}">
+  <text>所在地区</text><input name="regionId" placeholder="请选择所在地区" value="{{regionId}}" /><image src='/static/images/icon/more2.png'></image>
+  </picker>
+  <view><text>详细地址</text><input bindchange="address" name="address" placeholder="请输入详细地址" value="{{address}}" /></view>
+</view>
+<!--提交按钮-->
+<button class="submit" bindtap='comfirm' type="warn">保存</button>
+<!-- <view class='submit'><navigator url='/pages/member/logistics/index'><text>提交</text></navigator></view> -->
+<!--车型选择end-->

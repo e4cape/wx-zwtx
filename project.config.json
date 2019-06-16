@@ -1,0 +1,328 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx2876603f597a997c",
+	"projectname": "%E6%98%93%E7%BA%B8%E9%80%9A%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%89%880.01",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 41,
+			"list": [
+				{
+					"id": 0,
+					"name": "分类",
+					"pathName": "pages/goods/list/index",
+					"query": "cateId=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/member/cart/index",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "商品详情",
+					"pathName": "pages/goods/detail/index",
+					"query": "id=43"
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/member/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/buy/checkbuy/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "信息修改",
+					"pathName": "pages/member/userinfo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/member/orderlist/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/member/coupon/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/member/address/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/member/integral/index",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "订单详情",
+					"pathName": "pages/member/orderinfo/index",
+					"query": "sn=20180626091359815702101680"
+				},
+				{
+					"id": 12,
+					"name": "添加收货地址",
+					"pathName": "pages/member/addaddress/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品收藏",
+					"pathName": "pages/member/collect/index",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "评价宝贝",
+					"pathName": "pages/member/comment/index",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "商品列表",
+					"pathName": "pages/goods/list/index",
+					"query": "pc_id=37"
+				},
+				{
+					"id": -1,
+					"name": "发布货源",
+					"pathName": "pages/logistics/release/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的物流",
+					"pathName": "pages/member/logistics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "报价列表",
+					"pathName": "pages/member/logisticslist/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "承运详情",
+					"pathName": "pages/member/logisticsinfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物流",
+					"pathName": "pages/logistics/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/member/userinfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/member/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 24,
+					"name": "设置",
+					"pathName": "pages/member/setting/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "开通企业账号",
+					"pathName": "pages/member/enterprise/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "承运详情",
+					"pathName": "pages/member/logisticsinfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/member/address/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新增地址",
+					"pathName": "pages/member/addaddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/member/integral/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 30,
+					"name": "促销专区",
+					"pathName": "pages/goods/promotion/index",
+					"query": "promotionArea=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/member/cart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品结算",
+					"pathName": "pages/member/checkbuy/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/member/orderlist/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付成功",
+					"pathName": "pages/member/orderinfo/success",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资讯",
+					"pathName": "pages/news/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "成为承运商",
+					"pathName": "pages/logistics/applycarrier/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "完善资料",
+					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "车型车长",
+					"pathName": "pages/logistics/car/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 40,
+					"name": "店铺详情",
+					"pathName": "pages/shop/detail/index",
+					"query": "storeId=29&goodsId=178",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物流",
+					"pathName": "pages/logistics/index/index",
+					"scene": null
+				}
+				,
+				{
+					"id": -1,
+					"name": "名企汇",
+					"pathName": "pages/mingqihui/index/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

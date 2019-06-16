@@ -1,0 +1,103 @@
+<!--我的订单导航-->
+<view class='order-nav'>
+  <block wx:for="{{orderMenu}}" wx:key="">
+    <text bindtap="switchTab" data-status="{{item.status}}" class="{{item.status == status ? 'on' : ''}}">{{item.name}}</text>
+  </block>
+</view>
+<!--订单列表-->
+<view class='order-list'>
+<block wx:if="{{dataList != ''}}">
+  <block wx:for="{{dataList}}" wx:key="">
+  <view class='order-content'>
+    <view class='shopname'><text class='name'>{{item.storeName}}</text><text class='time'>下单时间：{{item.orderCreate}}</text></view>
+    <view class='product' bindtap='detail' data-ordersn="{{item.orderSn}}">
+      <view class='left'>
+      <block wx:for="{{item.imageList}}" wx:key="">
+        <image src='{{item}}'></image>
+      </block>
+      </view>
+      <view class='right'>
+        <view class='number'>共{{item.totalNum}}件</view>
+        <block wx:if="{{item.orderState == 1}}">
+        <view class="state yellow">待商家确认</view>
+        </block>
+        <block wx:if="{{item.orderState == 10}}">
+        <view class="state red">待付款</view>
+        </block>
+        <block wx:if="{{item.orderState == 15}}">
+        <view class="state yellow">商家备货中</view>
+        </block>
+        <block wx:if="{{item.orderState == 16}}">
+        <view class="state red">待付款(线下支付)</view>
+        </block>
+        <block wx:if="{{item.orderState == 20}}">
+        <view class="state yellow">待发货</view>
+        </block>
+        <block wx:if="{{item.orderState == 30}}">
+        <view class="state yellow">已发货</view>
+        </block>
+        <block wx:if="{{item.orderState == 40}}">
+        <view class="state">已完成</view>
+        </block>
+        <block wx:if="{{item.orderState == 50}}">
+        <view class="state">已删除</view>
+        </block>
+        <block wx:if="{{item.orderState == 0}}">
+        <view class="state">已取消</view>
+        </block>
+      </view>
+    </view>
+    <block wx:if="{{item.orderState == 1}}">
+      <block wx:if="{{item.frontMoney == 0 && item.isHot == 1}}">
+        <view class='btn' bindtap='payment' data-ordertotal="{{item.orderTotal}}" data-ordersn="{{item.orderSn}}" data-storename="{{item.storeName}}" data-orderbuyerid="{{item.orderBuyerId}}" data-type='2'><text class='btn-red'>支付保证金</text></view>
+      </block>
+    <view class='btn' bindtap='cancel' data-ordersn="{{item.orderSn}}" data-status="{{status}}"><text class='btn-gray'>取消订单</text></view>
+    </block>
+    <block wx:if="{{item.orderState == 10}}">
+    <view class='btn' bindtap='pay'><text class='btn-red'>去付款</text></view>
+    </block>
+    <!-- <view class='btn'><navigator url='/pages/member/orderinfo/success'>去付款</navigator></view> -->
+    <block wx:if="{{item.orderState == 16}}">
+    <view class='btn'><text class='btn-red'>待付款(线下支付)</text></view>
+    </block>
+    <block wx:if="{{item.orderState == 30}}">
+    <view class='btn' bindtap='comfire' data-ordersn="{{item.orderSn}}" data-status="{{status}}"><text class='btn-red'>确认收货</text></view>
+    </block>
+    <block wx:if="{{item.orderState == 0}}">
+    <view class='btn' bindtap='del' data-ordersn="{{item.orderSn}}" data-status="{{status}}"><text class='btn-gray'>删除订单</text></view>
+    </block>
+  </view>
+  <view class='index-border'></view>
+  </block>
+  </block>
+  <block wx:else>
+  <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+  </block>
+</view>
+
+<!--支付页面跳转-->
+<view class='modal'>
+  <modal title='支付提示' cancel-text='' confirm-text=''  hidden="{{mhHidden}}" bindconfirm="changeModel">
+    <view>提示：因订单是大宗商品交易，无法在通过手机进行支付，请在复制下方链接在电脑端打开进行支付</view>
+    <view style='margin-top:20rpx;'>电脑端链接：<text selectable="true">https://hao.360.com/?h_lnk</text></view>
+    <view style='color:#DD2B2B;'>提示：长按上方链接可复制链接</view>
+    <view style='font-size:28rpx; margin-top:20rpx; padding-top:20rpx; border-top:2rpx solid #D7D7D7;' bindtap="modelCancel">关闭</view>
+  </modal>
+</view>
+<!--微信授权登录-->
+<view>
+<modal title='微信授权登录' cancel-text='' confirm-text=''  hidden="{{wxHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+  <view wx:if="{{canIUse}}">
+  <!-- <view class='header'>
+      <image src='/images/wx_login.png'></image>
+  </view> -->
+  <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='warn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+  </button>
+</view>
+</modal> 
+</view>

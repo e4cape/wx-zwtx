@@ -1,0 +1,74 @@
+navigator{color: #689FDD; font-size: 26rpx; width: 60rpx; display: inline-block;}
+/* 店铺大图 */
+.shop-banner{ width: 100%; margin: 0rpx auto;}
+.shop-banner image{ width:100%; height: 320rpx; }
+/*店铺介绍*/
+.shop-intro{height: auto; padding: 0rpx 30rpx; color: #666666; font-size: 26rpx; }
+.shop-intro .content{width: 100%;height: 160rpx; padding: 20rpx 0rpx 0rpx;}
+.shop-intro .content image{ float: left; width: 120rpx;height: 120rpx;}
+.shop-intro .content .info{ float: left; width: 76%; line-height:36rpx; padding-left:20rpx;}
+.shop-intro .content .info view text{ padding-right: 40rpx;}
+.shop-intro .detail{line-height:40rpx; overflow: hidden;}
+.shop-intro .opening{color: #689FDD; font-size: 26rpx; text-align: right; padding-right: 20rpx;}
+/*店铺文化*/
+.shop-cate{height: 80rpx; line-height: 80rpx; font-size: 26rpx; border-bottom: 2rpx solid #D7D7D7; margin: 0rpx 30rpx;}
+.shop-cate view{ width:190rpx; text-align: center; float: left;}
+.shop-cate .on{ background-color: #DD2B2B; color: #ffffff;}
+.shop-culture{padding: 20rpx 30rpx; text-align: center; overflow: hidden; color: #666666; font-size: 26rpx; line-height: 36rpx;}
+.open{color: #689FDD; height: 60rpx; font-size: 26rpx; line-height: 60rpx; text-align: center; margin-top:20rpx;}
+/*产品信息*/
+.product-info{height: 240rpx; padding: 10rpx 30rpx;}
+.product-info image{float: left; width:200rpx; height: 200rpx; border:2rpx dotted #cccccc; }
+.product-info .product-text{float: left; font-size: 26rpx; color: #666666; line-height: 40rpx; padding: 20rpx 0rpx 0rpx 20rpx; width: 66%;}
+.product-info .product-text .red{color: #AE3737;}
+.product-info .product-text .line{text-decoration: line-through; padding-left: 20rpx;}
+.product-info .product-text .product-margin{margin-top: 60rpx;}
+.product-info .product-text .right{float: right;}
+.shop-product{padding: 0rpx 30rpx 160rpx 30rpx; height: auto; margin:0rpx auto;}
+.shop-product .list{margin:40rpx 0rpx; overflow: hidden; }
+.shop-product .list .info{color: #666666; font-size: 28rpx; font-weight: bold; margin-bottom: 10rpx;}
+.shop-product .list .label button{ height:60rpx; line-height: 60rpx; min-width: 20%; padding: 0rpx 30rpx; color:#666666;font-size: 26rpx; border-radius: 4rpx; margin:20rpx 20rpx 20rpx 0rpx; float: left;}
+.shop-product .list .label .on{ color:#ffffff; background-color: #DD2B2B; border: 2rpx solid #DD2B2B;}
+.shop-product .list .label .input{width: 158rpx; height: 54rpx; line-height: 54rpx; border: 2rpx solid #C1C1C1; border-radius: 4rpx; color: #999999;font-size: 22rpx; float: left; padding-left: 10rpx;}
+.shop-product .list .label text{float: left; color: #666666;font-size: 28rpx;}
+.shop-product .list .label .dw{padding: 10rpx  0rpx 10rpx 10rpx;}
+.shop-product .list .label .goods_num{width: 64rpx; height: 54rpx; line-height: 54rpx; border: 2rpx solid #C1C1C1; color: #999999;font-size: 26rpx; float: left; text-align: center; }
+.shop-product .list .label .jian{ width: 64rpx; height: 54rpx; line-height: 54rpx; border-left: 2rpx solid #C1C1C1;border-top: 2rpx solid #C1C1C1; border-bottom: 2rpx solid #C1C1C1; text-align: center; }
+.shop-product .list .label .jia{ width: 64rpx; height: 54rpx; line-height: 54rpx; border-right: 2rpx solid #C1C1C1;border-top: 2rpx solid #C1C1C1; border-bottom: 2rpx solid #C1C1C1; text-align: center; }
+/*提交按钮*/
+.shop-btn{ width:100%; height: 100rpx; line-height: 100rpx; position: fixed;bottom: 0;background: #fbfbfb;z-index: 9999;}
+.shop-btn view{float: left;}
+.shop-btn navigator{float: left;}
+.shop-btn .btn-image{ width:22%; height: 100rpx;}
+.shop-btn .operate{width: 76%;float: right;border: 1rpx solid #DD2B2B;}
+.shop-btn .btn-image image{ width:60rpx;height:64rpx; padding:20rpx 0rpx 0rpx 50rpx;}
+.shop-btn .operate .addcart{ width:50%; text-align: center; color: #DD2B2B; font-size: 30rpx;}
+.shop-btn .operate .buy{ width:50%; text-align: center; background-color: #DD2B2B; color: #ffffff; font-size: 30rpx;}
+/*色条*/
+.index-border{ width: 100%; height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}
+/*微信弹窗*/
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+}
+.header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+.wx {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+.wx text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}

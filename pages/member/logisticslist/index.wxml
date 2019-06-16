@@ -1,0 +1,54 @@
+<!--报价详细信息-->
+<view class='offer-info'><text class='info-text'>承运单号：{{routeSn}}</text><text class='info-txt'>发布时间：{{routeCreateTime}}</text></view>
+<view class='offer-xinxi'>
+  <view>装货地：{{routeFromMarket}}{{routeFromCity}}{{routeFromArea}}{{routeFromAddress}}</view>
+  <view>卸货地：{{routeToMarket}}{{routeToCity}}{{routeToArea}}{{routeToAddress}}</view>
+  <view>车辆要求：{{routeCarType}} / {{routeCarLong}}</view>
+  <view>货物量：{{routeMinNumber}}{{routeUnit == 1 ? '吨' : '方'}}至{{routeMaxNumber}}{{routeUnit == 1 ? '吨' : '方'}}</view>
+  <view>货物名称：{{routeGoodsName}} </view>
+  <block wx:if="{{routeBeginTime != null}}">
+  <view>装货时间：{{routeBeginTime}}</view>
+  </block>
+  <block wx:else>
+  <view>装货时间：</view>
+  </block>
+  <block wx:if="{{routeReceiveTime != null}}">
+  <view>期待送达时间：{{routeReceiveTime}}</view>
+  </block>
+  <block wx:else>
+  <view>期待送达时间：</view>
+  </block>
+  <view>联系人：{{routeContactName}}</view>
+  <view>联系电话：{{routeContactPhone}}</view>
+</view>
+<view class='index-border'></view>
+<!--报价列表-->
+<view class='offer-guidance'><text class='guidance-text'>平台指导价：{{routeGuidePrice}}/{{routeUnit == 1 ? '吨' : '方'}}</text><text class='guidance-txt'>(信息仅供参考)</text></view>
+<view class='offer-list'>
+<block wx:for="{{dataList}}" wx:key="key">
+  <view class='offer-list-content'>
+    <view class='left'>
+      <view class='text'><text>{{item.bidCarrierName}}</text></view>
+      <view class='txt'><text>承载量: {{item.bidNumber}}{{item.routeUnit == 1 ? '吨':'方'}}</text></view>
+      <view class='tet'><text>投标时间：{{item.bidTime}}</text></view>
+    </view>
+    <!-- <view class='right'><navigator url='/pages/member/logisticsinfo/index'>选择</navigator></view> -->
+    <view class='right'><text class="btn" bindtap='select' data-bidRouteId="{{item.bidRouteId}}" data-bidCarrierId="{{item.bidCarrierId}}" data-bidCarrierName="{{item.bidCarrierName}}">选择</text></view>
+    <view class='text-remark'><text class='remark'>￥{{item.bidPrice}}</text><text>/{{item.routeUnit == 1 ? '吨':'方'}}</text></view>
+  </view>
+  </block>
+  <!-- <view class='offer-list-content'>
+    <view class='left'>
+      <view class='text'><text>深圳→广州</text></view>
+      <view class='txt'><text>普通瓦楞纸 /50至100吨</text></view>
+      <view class='tet'><text>发布时间：2019.12.09</text></view>
+    </view>
+    <view class='right'><navigator>选择</navigator></view>
+    <view class='text-remark'><text class='remark'>￥5600.00</text><text>/吨</text></view>
+  </view> -->
+</view>
+<view class='modal'>
+  <modal title='选择承运商' cancel-text='取消' confirm-text='确定'  hidden="{{mhHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" data-bidRouteId="{{bidRouteId}}" data-bidCarrierId="{{bidCarrierId}}">
+    <view><text>您确认将"{{bidCarrierName}}"作为您的物流承运商吗</text></view>
+  </modal>
+</view>

@@ -1,0 +1,7 @@
+<!--pages/member/service/index.wxml-->
+<view class='service'>
+<view class='workday'>工作时间：周一至周五</view>
+<view class='time'>上午：9:00~1200</view>
+<view class='time'>下午：2:00~6：00</view>
+<view class='tel'><image src="/static/images/icon/tel.png"></image>135-6787-6543</view>
+</view>

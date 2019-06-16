@@ -1,0 +1,41 @@
+/*成品纸列表*/
+.paper-list{color: #666666; font-size: 26rpx; }
+.paper-list .content{ float: left; width: 20%; text-align: center; margin: 30rpx auto 20rpx;}
+.paper-list .content view image{ width: 80rpx; height: 80rpx;}
+/*产品列表类型*/
+.product-type{overflow: auto;}
+.product-type .order-state{width: 33.33%; text-align: center; color: #666666; font-size: 28rpx; float: left; margin: 20rpx auto;position: relative;overflow: auto;}
+.product-type .order-state text{text-align: center;}
+.product-type .order-state .order{float: right;position: absolute;top: 0;right: 28%;width: 15rpx;height: 30rpx;margin-top: 5rpx;}
+.product-type .order-state image{width: 15rpx; height: 10rpx;line-height: 10rpx;float: left;margin-top: 5rpx;}
+/*产品列表*/
+.products{ height: auto; padding-bottom:100rpx; }
+.products .products-content{ width: 100%; height: auto; overflow: auto;}
+.products .products-content .goods-list{ width: 45%; float: left;  margin: 10rpx 5rpx 10rpx 26rpx; border: 2rpx solid #EDEDED;}
+.products .products-content .goods-list view{ padding-left:20rpx; }
+.products .products-content .goods-list .img{ width: 100%; height: 300rpx; }
+.products .products-content .goods-list .pname{ color: #666666; font-size: 26rpx;}
+.products .products-content .goods-list .cname{ padding-bottom:20rpx; }
+.products .products-content .goods-list .cname text{ color: #999999; font-size: 26rpx;}
+.products .products-content .goods-list .cname .location{ padding-left: 45rpx;}
+.products .products-content .goods-list text{ color: #666666; font-size: 26rpx;}
+.products .products-content .goods-list .price{color:#AE3737; font-size: 28rpx;}
+/*筛选弹框*/
+.search{width:100%; position: fixed;height:100%; top:0rpx;}
+.search .left{background:rgb(0,0,0);filter:alpha(opacity=50); -moz-opacity:0.5;  -khtml-opacity: 0.5; opacity: 0.5; width:35%; height: 100%; float: left;}
+.search .right{background:#ffffff;width:65%; height: 100%;float: left;}
+.search .right .kz-auto{overflow: auto; padding-top:40rpx;}
+.search .right .kz{color: #666666; font-size: 28rpx; margin-left:30rpx; padding-top:40rpx;}
+.search .right view input{color: #999999; font-size: 22rpx; border: 2rpx solid #999999; width: 168rpx; height: 60rpx; line-height: 60rpx; float: left; margin-left:30rpx; padding-left: 20rpx;}
+.search .right view .dw{float: left; color:#999999;  font-size: 22rpx; padding:12rpx 0rpx 0rpx 20rpx;
+}
+.search .right .cd{margin-left:30rpx; padding-top:40rpx;}
+.search .right .cd-text{margin:0rpx 0rpx 30rpx 22rpx; padding-top:10rpx; overflow: auto;}
+.search .right .cd-text .on{ background: #DD2B2B; color:#ffffff;}
+.search .right .cd text{color: #666666; font-size: 28rpx;}
+.search .right .cd image{width: 26rpx; height: 14rpx; float: right; padding: 25rpx 30rpx 0rpx 0rpx;}
+.search .right .cd-text view{min-width: 100rpx;padding: 0 8rpx; height: 50rpx; line-height: 50rpx; float: left; text-align: center; color: #666666; font-size: 22rpx; border: 2rpx solid #999999; margin: 10rpx 10rpx 0rpx 0rpx; border-radius: 10rpx;}
+.search .right .cd-text view.active{background: #DD2B2B;border-color: #DD2B2B;color: #fff;}
+.search .right view button{color: #666666; font-size: 26rpx; width: 134rpx; height: 58rpx; float: left; margin: 20rpx 0rpx 0rpx 60rpx;}
+/*色条*/
+.index-border{ height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}

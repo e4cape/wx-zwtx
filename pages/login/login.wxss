@@ -1,0 +1,32 @@
+/* pages/login/login.wxss */
+/* 背景大图 */
+.login-img{margin: 0rpx auto;}
+.login-img .bj{ width:100%; height: 600rpx; }
+.login-img .logoo{ position: absolute; top: 160rpx; left:45%; width: 128rpx; height: 120rpx;}
+/*登录表单*/
+.login-register{height: 80rpx; line-height: 80rpx;}
+.login-register .on{ color: #DD2B2B; border-bottom: 2rpx solid #DD2B2B;}
+.login-register navigator{width: 50%; height: 80rpx; text-align: center; float: left;}
+.content{
+  margin: 40rpx auto 120rpx;
+}
+.content .account{
+   border: 1px solid #D7D7D7;
+   margin:20rpx 80rpx; 
+   height: 80rpx;
+   line-height: 80rpx;
+}
+.content .account view input{
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#999999; 
+  font-size:26rpx;
+  padding-left: 20rpx;
+}
+.btn{
+  width: 50%;
+  margin-top:40px;
+  color: #FFFFFF;
+  border-radius: 70rpx;
+}
+.content .password{ color: #999999; font-size: 26rpx; text-align: center; margin-top:20rpx;}

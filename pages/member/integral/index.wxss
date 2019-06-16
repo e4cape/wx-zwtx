@@ -1,0 +1,9 @@
+/* pages/member/integral/index.wxss */
+/*我的积分*/
+.integral{width: 100%; text-align: center; height: 300rpx; background-color:#DD2B2B;}
+.integral .number{color: #FFFFFF; font-size: 64rpx; padding: 60rpx 0rpx 10rpx 0rpx;}
+.integral .title{color: #FFFFFF; font-size: 28rpx; }
+/*积分变动列表*/
+.integral-list{margin: 20rpx 30rpx; font-size: 26rpx; color: #666666;}
+.integral-list .integral-info{ height: 60rpx; line-height: 60rpx; border-bottom: 2rpx solid #D7D7D7;}
+.integral-list .integral-info text{float: left; width: 25%; text-align: center;}

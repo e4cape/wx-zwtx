@@ -1,0 +1,84 @@
+<!--成品纸店铺列表-->
+<view class='paper-list'>
+<block wx:for="{{listBrand}}" wx:key="">
+  <view class='content' data-storeid="{{item.storeId}}" data-cateid="{{item.cateId}}" bindtap="switchTab" ><view><image src='{{item.storeBrand}}'></image><view>{{item.storeBrandName}}</view></view></view>
+</block>
+  <view class='content'  style="display:{{mHidden?'block':'none'}}"><navigator url='/pages/shop/detail/index'><image src='/static/images/icon/more.png'></image><view>更多品牌</view></navigator></view>
+</view>
+<view class='index-border'></view>
+<!--产品列表类型-->
+<view class='product-type'>
+    <view  class="order-state" bindtap='saleAsc' hidden='{{saleAsc}}'>
+        <text>销量</text>
+        <view class="order">
+            <image class='sl' src='/static/images/icon/sl.png'></image>
+            <image class='xl' src='/static/images/icon/xl.png'></image>
+        </view>
+    </view>
+    <view class="order-state" bindtap='saleDesc' hidden='{{saleDesc}}'>
+        <text>销量</text>
+        <view class="order">
+            <image class='sl' src='/static/images/icon/sl.png'></image>
+            <image class='xl' src='/static/images/icon/xl.png'></image>
+        </view>
+    </view>
+    <view class="order-state" bindtap='priceAsc' hidden='{{priceAsc}}'>
+        <text>价格</text>
+        <view class="order">
+            <image class='sl' src='/static/images/icon/sl.png'></image>
+            <image class='xl' src='/static/images/icon/xl.png'></image>
+        </view>
+    </view>
+    <view class="order-state" bindtap='priceDesc' hidden='{{priceDesc}}'>
+        <text>价格</text>
+        <view class="order">
+            <image class='sl' src='/static/images/icon/sl.png'></image>
+            <image class='xl' src='/static/images/icon/xl.png'></image>
+        </view>
+    </view>
+    <view class="order-state" bindtap='search'><text>筛选</text></view>
+</view>
+<!--产品列表-->
+<view style='display:none;'>{{cateId}}</view>
+<view class='products'>
+    <view class='products-content'>
+    <block wx:if="{{dataList != ''}}">
+        <block wx:for="{{dataList}}" wx:key="">
+          <view class='goods-list' data-goodsid="{{item.goodsId}}" data-storeid="{{item.goodsStoreId}}" bindtap="storeClick">
+            <image class="img" src="{{item.goodsDefaultImage}}"></image>
+            <view><text class='price'>￥{{item.goodsPrice}}</text><text>/{{item.unit}}</text></view>
+            <view class='pname'>{{item.goodsName}}</view>
+            <view class='cname'>
+                <text>{{item.goodsStoreName}}</text>
+                <text class='location'>{{item.areaName}}</text>
+            </view>
+          </view>
+        </block>
+    </block>
+    <block wx:else>
+        <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+    </block>
+    </view>
+  </view>
+<!--筛选框-->
+<view class='search' hidden='{{mhHidden}}'>
+  <view class='left' bindtap='unsearch'></view>
+  <view class='right'>
+  <block wx:if="{{cateId == 1}}">
+    <view class='kz'>克重</view>
+    <view class='kz-auto'>
+      <input name="number" placeholder="请输入克重" bindinput='weight' value="{{weight}}" />
+      <text class='dw'>g</text>
+    </view>
+  </block>
+    <view class='cd' bindtap='click' hidden='{{cHidden}}'><text>产地</text><image src='/static/images/icon/xl.png'></image></view>
+    <view class='cd' bindtap='unclick' hidden='{{ccHidden}}'><text>产地</text><image src='/static/images/icon/xl.png'></image></view>
+    <view class='cd-text' hidden='{{cdHidden}}'>
+    <view bindtap='selectArea' data-areaname="全国" data-regionid="0"  class="{{regionId == 0 ? 'active' : ''}} ">全国</view>
+    <block wx:for="{{addressList}}" wx:key="">
+      <view bindtap='selectArea' data-areaname="{{item.regionName}}" data-regionid="{{item.regionId}}"  class="{{item.regionId == regionId ? 'active' : ''}} ">{{item.regionName}}</view>
+    </block>
+    </view>
+    <view><button bindtap='reset' class="on">重置</button><button type='warn' bindtap='comfire' style='color:#ffffff;'>确定</button></view>
+    </view>
+</view>

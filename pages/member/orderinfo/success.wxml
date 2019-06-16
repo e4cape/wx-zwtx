@@ -1,0 +1,10 @@
+<view class='success'>
+  <view>
+    <image src='/static/images/icon/success.png'></image>
+  </view>
+  <view class='red'>付款成功 感谢您的支持</view>
+  <view class='gray'>
+    <navigator class='home'open-type="switchTab" url='/pages/index/index'>首页逛逛</navigator>
+    <view class='orderlist' bindtap='orderList' data-status='0'>查看订单</view>
+  </view>
+</view>

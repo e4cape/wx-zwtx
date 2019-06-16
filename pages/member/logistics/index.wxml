@@ -1,0 +1,38 @@
+<!--我的物流导航-->
+<view class='wuliu-nav'>
+<text bindtap="switchTab" data-status="1" class="{{status == '1' ? 'on' : ''}}">报价中</text>
+<text bindtap="switchTab" data-status="6" class="{{status == '6' ? 'on' : ''}}">已失效</text>
+<text bindtap="switchTab" data-status="4" class="{{status == '4' ? 'on' : ''}}">已中标</text>
+<text bindtap="switchTab" data-status="0" class="{{status == '0' ? 'on' : ''}}">审核中</text>
+<text bindtap="switchTab" data-status="2" class="{{status == '2' ? 'on' : ''}}">已驳回</text>
+  <!-- <navigator class='on'><text>报价中</text></navigator>
+  <navigator><text>已失效</text></navigator>
+  <navigator><text>已中标</text></navigator>
+  <navigator><text>审核中</text></navigator>
+  <navigator><text>已驳回</text></navigator> -->
+</view>
+<!--物流列表-->
+<view class='wuliu-list'>
+  <block wx:if="{{dataList != ''}}">
+    <block wx:for="{{dataList}}" wx:key="key">
+      <view class='wuliu-list-content'>
+        <view class='left' data-id="{{item.routeId}}" data-routestate="{{item.routeState}}" data-bidcarrierid="{{item.routerCarrierId}}" bindtap="{{status == '1' ? 'offerClick' : 'deatil'}}">
+          <view class='text'><text>{{item.routeFromCity}}→{{item.routeToCity}}</text></view>
+          <view class='txt'><text>{{item.routeGoodsName}} /{{item.routeMinNumber}}至{{item.routeMaxNumber}}{{item.routeUnit == '1' ? '吨' : '方'}}</text></view>
+          <view class='tet'><text>发布时间：{{item.routeCreateTime}}</text></view>
+        </view>
+        <view class='right' style="display:{{status == '1' ? 'block' : 'none'}}"><text data-id="{{item.routeId}}" bindtap="offerClick" class='checked wz'>查看报价</text></view>
+        <view class='right' style="display:{{status == '6' ? 'block' : 'none'}}"><text class='wz' data-id="{{item.routeId}}" bindtap='deleteRoute'>删除</text><text class='wz' data-id="{{item.routeId}}" bindtap='repeat'>重发</text></view>
+        <!-- <view class='right' style="display:{{status == '4' ? 'block' : 'none'}}"><text class='wz' data-id="{{item.routeId}}" bindtap='deleteRoute'>删除</text></view> -->
+        <view class='right' style="display:{{status == '0' ? 'block' : 'none'}}"></view>
+        <view class='right' style="display:{{status == '2' ? 'block' : 'none'}}">
+        <view class='text-remark gd'>驳回：{{item.routeCheckReason}}</view>
+        <view class='gd'><text data-id="{{item.routeId}}" bindtap='deleteRoute'>删除</text><text data-id="{{item.routeId}}" bindtap='repeat'>重发</text></view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+      <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+  </block>
+</view>

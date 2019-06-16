@@ -1,0 +1,8 @@
+/*设置*/
+.setting{ width:100%; height:100rpx; line-height: 100rpx; border-bottom: 2rpx solid #D7D7D7; }
+.setting text{ float: left; padding-left: 30rpx; color: #666666; font-size: 28rpx;}
+.setting image{ float: right; width: 15rpx; height:30rpx; padding: 40rpx 30rpx 0rpx 0rpx;}
+/*退出登录*/
+.out{margin: 100rpx 0rpx; width: 100%; height: 100rpx; line-height: 100rpx; text-align: center; color: #ffffff; font-size: 26rpx;}
+.out text{background-color: #DD2B2B; padding: 35rpx 300rpx;}
+

@@ -1,0 +1,28 @@
+/* 承运商申请基本资料 */
+.carrier{height: auto; margin: 0rpx auto;}
+.carrier view{ height:120rpx; line-height: 120rpx; border-bottom: 2rpx solid #D7D7D7; margin: 0rpx 30rpx;}
+.carrier view text{float: left; padding-right: 40rpx; color: #666666; font-size: 26rpx;}
+.carrier view input{float: left; height:120rpx; line-height: 120rpx;color: #999999; font-size: 26rpx;}
+/* 承运商申请身份证信息 */
+.card{ height: auto; margin: 0rpx 30rpx 40rpx; clear: both; overflow: hidden;}
+.card .card-title{ height:120rpx; line-height: 120rpx; color: #666666; font-size: 28rpx; font-weight: bold; }
+.card .card-main .card-img{float: left; width: 26.33%; text-align: center;}
+.card .card-main  .card-img button{opacity: 0}
+/* .card .card-main .card-img image{ width: 180rpx; height: 180rpx; } */
+.card .card-main .card-img .upload{ width: 180rpx; height: 180rpx; position: absolute; top: 478rpx; left:40rpx;}
+.card .card-main .card-img .uploads{ width: 180rpx; height: 180rpx; position: absolute; top: 478rpx; left:226rpx;}
+.card .card-main .card-img .uploadss{ width: 180rpx; height: 180rpx; position: absolute; top: 478rpx; left:413rpx;}
+.card .card-main .card-img button{ width: 180rpx; height: 180rpx;}
+/* .user-pic .upload{width: 160rpx; height: 160rpx;  position: absolute; top:60rpx; left:39.9999%;opacity: 0} */
+.card .card-main .card-img view{ font-size: 26rpx; color: #666666;}
+/*色条*/
+.index-border{height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}
+/*申请须知*/
+.apply-info{  height: auto; text-align: center;}
+.apply-info .top{color: #666666; font-size: 28rpx; margin-bottom: 20rpx;}
+.apply-info .bottom{color: #666666; font-size: 26rpx;}
+/*提交审核*/
+.submit{width: 100%; height: 100rpx; line-height: 100rpx; text-align: center;background-color: #DD2B2B; position: fixed;bottom: 0;border-radius:0}
+.btn{width: 100%; height: 100rpx; line-height: 100rpx; text-align: center;background-color: #999999; position: fixed;bottom: 0;}
+.submit text{ color: #ffffff; font-size: 26rpx;}
+.btn text{ color: #ffffff; font-size: 26rpx;}

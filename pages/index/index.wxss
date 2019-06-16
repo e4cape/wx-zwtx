@@ -1,0 +1,48 @@
+.navigator{height: 100%;}
+/*logo*/
+.logo .img{ width: 60rpx; height: 54rpx; float:left; padding: 25rpx 20rpx 0rpx 30rpx;}
+/*客服*/
+.service{overflow: auto;padding-top: 20rpx;}
+.service .img{ width: 55rpx; height:55rpx; float:left;}
+/* #contactButton{width: 80rpx; height:60rpx;} */
+#contactButton{padding-left: 23rpx;}
+/*搜索  */
+.search{ float:left;width: 70%;height: 60rpx;border: 1rpx solid #EDEDED;border-radius: 10rpx;margin: 20rpx auto;}
+.search .input{font-size: 26rpx;height: 60rpx; background-color: #EDEDED; text-align: center;}
+.search .searchbox{width:100rpx;height: 60rpx;position: absolute;right: 15%;top: 15rpx;}
+.search .searchbox .searchIcon{width: 34rpx;height: 34rpx;margin: 20rpx 0 0 30rpx;}
+/*轮播图*/
+.index-avs{display:flex;}
+.auto-img{width: 100%; height:100%; display: block;}
+/*  喇叭公告*/
+.horn{ background-color: #DD2B2B1A; width: 100%; height: 48rpx; line-height: 48rpx; margin-top:45rpx;}
+.horn .img{ width: 40rpx; height: 32rpx; float:left; padding: 10rpx 20rpx 0rpx 20rpx;}
+.horn text{ color: #DD2B2B; font-size: 26rpx; float:left;}
+/*导航栏分类  */
+.navBar{height: 180rpx; margin-top:20rpx; overflow: hidden;}
+.navBar .navItem{width: 25%; height: 180rpx;float: left;text-align: center;}
+.navBar .navItem  .cateName{margin-top:-18rpx;}
+.navBar .navItem image{width: 100rpx;height: 100rpx; border-radius: 70rpx;}
+.navBar .navItem text{font-size: 26rpx;display: inline-block;}
+/*小广告*/
+.small-banner{ height: auto;}
+.small-banner view{ width: 44%; float: left; margin: 5rpx 0rpx 5rpx 30rpx;}
+.small-banner view .img{ width: 100%; height: 200rpx; }
+/*最新资讯*/
+.news{ height: auto; padding: 10rpx 30rpx 20rpx 30rpx;}
+.news .news-cate{ height: 80rpx;line-height: 80rpx;}
+.news .news-cate .best-news{ float: left; color: #DD2B2B;font-size: 32rpx;}
+.news .news-cate .news-more{ float: right; color: #666666;font-size: 25rpx;}
+.news .news-title{color:#666666;font-size: 28rpx; height: 60rpx; line-height: 60rpx;overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+/*成品纸*/
+.products{ height: auto;}
+.products .products-cate{ height: 80rpx;line-height: 80rpx; padding: 0rpx 30rpx;}
+.products .products-cate .products-paper{ float: left; color: #DD2B2B;font-size: 32rpx;}
+.products .products-cate .products-more{ float: right; color: #666666;font-size: 25rpx;}
+.products .products-content{ width: 100%; height: auto;}
+.products .products-content .goods{ width: 28%; float: left;  margin: 10rpx 5rpx 10rpx 26rpx;}
+.products .products-content .goods .img{ width: 100%; height: 200rpx; }
+.products .products-content .goods text{ color: #666666; font-size: 26rpx; width: 240rpx;}
+.products .products-content .goods .price{color:#AE3737; font-size: 28rpx;}
+/*色条*/
+.index-border{ height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}

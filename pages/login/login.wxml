@@ -1,0 +1,19 @@
+<!--背景大图-->
+<view class='login-img'><image class='bj' src='/static/images/bj.png'></image></view>
+<view class='login-img'><image class='logoo' src='/static/images/icon/logoo.png'></image></view>
+<!--登录表单-->
+<view class='login-register'>
+  <navigator class='on'><text class='login'>登录</text></navigator>
+  <navigator url='/pages/register/register'><text class='register'>注册</text></navigator>
+</view>
+<view class="content">
+  <view class="account">
+    <view><input bindinput="accountInput" placeholder="请输入手机号" name='mobile' value='{{mobile}}' /></view>
+  </view>
+   <view class="account">
+    <view><input password='true' bindblur="pwdBlur" placeholder="请输入密码" name='password' value='{{password}}' /></view>
+  </view>
+  <button class="btn" bindtap='login' type="warn">登录</button>
+  <view class='password'><navigator url='/pages/member/rememberpassword/index'>忘记密码</navigator></view>
+</view>
+<view>{{message}}</view>

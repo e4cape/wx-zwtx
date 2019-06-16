@@ -1,0 +1,25 @@
+<!--个人信息头像-->
+<view class='user-pic'>
+    <image src='{{memberAvatar}}'></image>
+    <!-- <input class='upload' type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='upload' name="memberAvatar"></input> -->
+    <button class='upload' type="default" bindtap='upload' name="memberAvatar"></button>
+<!--<image src='{{userinfo.avatarUrl}}'></image>-->
+</view>
+<!--个人详细信息-->
+<view class='userinfo'>
+  <view><text>帐号</text><text>{{memberAccount}}</text></view>
+  <view bindtap='update'><view class='left'><text>昵称</text><text>{{memberNickname}}</text></view><view class='right'><image src='/static/images/icon/more2.png'></image></view></view>
+  <!-- <button class="btn" bindtap='offer' data-routeId="{{item.routeId}}" data-routerCarrierId="{{carrierId}}" type="warn">报价</button> -->
+</view>
+<view class='index-border'></view>
+<view class='userinfo'>
+  <view><text>绑定手机</text><text>{{memberPhone}}</text></view>
+  <view><navigator url='/pages/member/setpassword/index'><view class='left'><text>密码设置</text></view><view class='right'><image src='/static/images/icon/more2.png'></image></view></navigator></view>
+</view>
+<view class='modal'>
+  <modal title='修改昵称' cancel-text='取消' confirm-text='确定'  hidden="{{mhHidden}}" bindconfirm="confirm" bindcancel="modelCancel">
+    <view><input bindinput="NickNameInput" placeholder="输入昵称" name='memberNickname' value='{{memberNickname}}' /><text></text></view>
+  </modal>
+</view>
+
+

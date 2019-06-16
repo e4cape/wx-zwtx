@@ -1,0 +1,92 @@
+<!--发布货源基本资料-->
+<view class='release'>
+  <picker mode="region" bindchange="routeFromCity" value="{{routeFromCity}}" custom-item="{{customItem}}">
+  <text>装货地</text><input disabled name="routeFromCity" placeholder="请选择装货地" value="{{routeFromCity}}" /><image src='/static/images/icon/more2.png'></image>
+  </picker>
+  <view><text>详细地址</text><input bindchange="routeFromAddress" name="routeFromAddress" placeholder="请输入详细装货地址" value="{{routeFromAddress}}" /></view>
+</view>
+<view class='index-border'></view>
+<view class='release'>
+  <picker mode="region" bindchange="routeToCity" value="{{routeToCity}}" custom-item="{{customItem}}">
+  <text>卸货地</text><input disabled name="routeToCity" placeholder="请选择卸货地" value="{{routeToCity}}" /><image src='/static/images/icon/more2.png'></image>
+  </picker>
+  <view><text>详细地址</text><input bindchange="routeToAddress" name="routeToAddress" placeholder="请输入详细卸货地址" value="{{routeToAddress}}" /></view>
+</view>
+<view class='index-border'></view>
+<view class='release'>
+  <view bindtap='car' data-routefromcity="{{routeFromCity}}" data-frommarket="{{fromMarket}}" data-fromcity="{{fromCity}}" data-fromarea="{{fromArea}}" data-routefromaddress="{{routeFromAddress}}" data-routetocity="{{routeToCity}}" data-tomarket="{{toMarket}}" data-tocity="{{toCity}}" data-toarea="{{toArea}}" data-routetoaddress="{{routeToAddress}}" data-routeunit="{{routeUnit}}" data-routeminnumber="{{routeMinNumber}}" data-routemaxnumber="{{routeMaxNumber}}" data-routegoodsname="{{routeGoodsName}}" data-routecontactname="{{routeContactName}}" data-routecontactphone="{{routeContactPhone}}" data-routebegintime="{{routeBeginTime}}" data-routereceivetime="{{routeReceiveTime}}" >
+    <text>车型选择</text>
+    <block wx:if="{{checkCarLong != '' && checkCarType != ''}}">
+    <input style='width:64%;' placeholder="请选择需要的车长车型" value="{{checkCarLong + ';'}}{{checkCarType}}" />
+    </block>
+    <block wx:else>
+    <input style='width:64%;' placeholder="请选择需要的车长车型" value="{{checkCarLong}}{{checkCarType}}" />
+    </block>
+  </view>
+  <view class='hydw'><text>货运单位</text><radio-group class="radio-group" bindchange="routeUnit"><radio name='routeUnit' value="1" checked="{{routeUnit == 1 ? 'checked' : ''}}" color='#DD2B2B' />\t吨\t<radio style='margin-left:60rpx;' name='routeUnit' value="2" checked="{{routeUnit == 2 ? 'checked' : ''}}" color='#DD2B2B' />\t方</radio-group></view>
+  <view><text>货运量</text><input type='number' bindchange="routeMinNumber" style='width:140rpx;' name="routeMinNumber" placeholder="最小" value="{{routeMinNumber}}" /><text>至</text><input type='number' bindchange="routeMaxNumber" style='width:140rpx;' name="routeMaxNumber" placeholder="最大" value="{{routeMaxNumber}}" /></view>
+</view>
+<view class='index-border'></view>
+<view class='release'>
+  <view><text>货物名称</text><input bindchange="routeGoodsName" name="routeGoodsName" placeholder="请输入货物名称" value="{{routeGoodsName}}" /></view>
+  <view><text>联系人</text><input bindchange="routeContactName" name="routeContactName" placeholder="请输入联系人名称" value="{{routeContactName}}" /></view>
+  <view><text>联系电话</text><input type='number' bindchange="routeContactPhone" name="routeContactPhone" placeholder="请输入联系电话" value="{{routeContactPhone}}" /></view>
+</view>
+<view class='index-border'></view>
+<view class='release'>
+  <picker mode="date" value="{{routeBeginTime}}" start="{{currentTime}}" end="2060-10-01" bindchange="routeBeginTime">
+  <block wx:if='{{routeBeginTime != "null"}}'>
+      <text>装货时间</text><input disabled name="routeBeginTime" placeholder="(选填)" value="{{routeBeginTime}}" />
+  </block>
+  <block wx:else>
+      <text>装货时间</text><input disabled name="routeBeginTime" placeholder="(选填)" value="(选填)" />
+  </block>
+  </picker>
+  <picker mode="date" value="{{routeReceiveTime}}" start="{{currentTime}}" end="2060-10-01" bindchange="routeReceiveTime">
+    <block wx:if='{{routeReceiveTime != "null"}}'>
+      <text>期望送达时间</text><input disabled name="routeReceiveTime" placeholder="(选填)" value="{{routeReceiveTime}}" />
+    </block>
+    <block wx:else>
+      <text>期望送达时间</text><input disabled name="routeReceiveTime" placeholder="(选填)" value="(选填)" />
+    </block>
+  </picker>
+</view>
+<view class='index-border'></view>
+<!--提交按钮-->
+<button class="submit" bindtap='comfirm' type="warn">提交</button>
+<!-- <view class='submit'><navigator url='/pages/member/logistics/index'><text>提交</text></navigator></view> -->
+<!-- 车型选择弹窗
+  <view class='modal'>
+  <modal title='车型选择' cancel-text='取消' confirm-text='确定'  hidden="{{mhHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" data-routeId="{{routeid}}" data-routerCarrierId="{{routercarrierid}}">
+  <view>车长(最多选三个)</view>
+  <text>4.2</text>
+  <text>5</text>
+  <text>6.2</text>
+  <text>6.8</text>
+  <text>7.7</text>
+  <text>8.2</text>
+  <text>8.7</text>
+  <text>9.6</text>
+  <text>11.7</text>
+  <text>12.5</text>
+  <text>13</text>
+  <text>15</text>
+  <text>16</text>
+  <text>17.5</text>
+  <text>其他</text>
+    <view class='modal-border'></view>
+    <view>车型(最多选三个)</view>
+    <text>平板</text>
+  <text>高栏</text>
+  <text>厢式</text>
+  <text>集装箱</text>
+  <text>自卸</text>
+  <text>保温</text>
+  <text>高低板</text>
+  <text>面包车</text>
+  <text>棉被车</text>
+  <text>飞翼车</text>
+   <view class='modal-border'></view>
+  </modal>
+</view> -->
+<!--车型选择end-->

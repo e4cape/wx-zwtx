@@ -1,0 +1,5 @@
+<!--pages/member/setting/about/index.wxml-->
+<view class='about'>
+<view class='about-title'>关于我们</view>
+<view class='about-content'>三七互娱,是全球知名的综合类游戏上市公司,旗下拥有37游戏、37手游、37games和极光网络等覆盖全球市场的发行平台及研发体系;三七互娱,致力于推动国产游戏</view>
+</view>

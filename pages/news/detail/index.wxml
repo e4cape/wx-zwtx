@@ -1,0 +1,22 @@
+<import src="/utils/wxParse/wxParse.wxml" />
+<!--文章标题-->
+<view class='news-title'><text>{{info.articleTitle}}</text></view>
+<!--文章信息-->
+<view class='news-info'>
+  <text>发布日期：{{info.articleTime}}</text><image class='eye' src='/static/images/icon/eye.png'></image><text>{{info.aticleClick}}</text><image class='dz' src='/static/images/icon/dz.png'></image><text>{{info.aticleLove}}</text>
+  <!-- <text>来源：{{info.articleFrom}}</text> -->
+</view>
+<!--文章详情-->
+<view class="news-content">
+  <!--将数据转换成html格式  -->
+    <template is="wxParse" data="{{wxParseData:wxParseData.nodes}}" />
+</view>
+<!-- <view class='news-content'>
+  <view><text>{{info.articleContent}}</text>
+  </view>
+</view> -->
+<!--点赞-->
+<view bindtap='update_zan' data-articleId='{{info.articleId}}' data-love="{{info.aticleLove}}" class='news-dz'>
+  <view><image class='eye' src='/static/images/icon/dian.png'></image></view>
+  <view><text>来都来了，点个赞吧！</text></view>
+</view>

@@ -1,0 +1,19 @@
+@import "/utils/wxParse/wxParse.wxss";
+/*文章标题 */
+.news-title{ margin: 20rpx auto; padding: 0rpx 30rpx;}
+.news-title text{ color: #000000; font-size: 40rpx;}
+/**文章信息**/
+.news-info{ height: 60rpx; line-height: 60rpx; margin: 0rpx auto 10rpx; padding: 0rpx 30rpx;}
+.news-info text{ color: #999999; font-size: 26rpx; padding-right: 40rpx;}
+.news-info .eye{ width: 35rpx; height: 20rpx; padding-right: 10rpx;}
+.news-info .dz{ width: 26rpx; height: 26rpx;  padding-right: 10rpx;}
+/**文章详情**/
+.news-content{ margin: 20rpx auto;  line-height: 50rpx; padding: 0rpx 30rpx; color: #666666; font-size: 32rpx;}
+.news-content view text{ text-align:left; color: #666666; font-size: 26rpx;}
+.news-content view image{ text-align:center; width: 100%;}
+/**备注**/
+.news-remark{margin: 20rpx auto; padding: 0rpx 30rpx;}
+.news-remark text{ text-align:left; color: #666666; font-size: 26rpx;}
+/**点赞**/
+.news-dz{margin: 20rpx auto;text-align:center; color: #666666; font-size: 26rpx;}
+.news-dz image{ width: 80rpx; height: 80rpx; padding-bottom: 20rpx}

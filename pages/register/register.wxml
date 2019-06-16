@@ -1,0 +1,34 @@
+<!--背景大图-->
+<view class='login-img'><image class='bj' src='/static/images/bj.png'></image></view>
+<view class='login-img'><image class='logoo' src='/static/images/icon/logoo.png'></image></view>
+<!--注册表单-->
+<!-- <view class='login-register'>
+  <navigator url='/pages/login/login'><text class='login'>登录</text></navigator>
+  <navigator class='on'><text class='register'>注册</text></navigator>
+</view> -->
+<view class="content">
+  <view class="account">
+    <view><input bindinput="accountInput" placeholder="请输入手机号或者账号" name='memberPhone' value='{{memberPhone}}' /></view>
+  </view>
+  <view hidden='{{mmHidden}}' class="account code">
+    <view>
+      <input bindinput="codeInput" placeholder="请输入验证码" name='code' value='{{code}}' />
+      <button class='codeBtn' bindtap='getVerificationCode' disabled='{{disabled}}' >{{codename}}</button>
+    </view>
+  </view>
+  <view hidden='{{mmHidden}}' class="account">
+    <view><input password='true' bindinput="pwdBlur" placeholder="请设置密码" name='memberPassword' value='{{memberPassword}}' /></view>
+  </view>
+   <view hidden='{{mmHidden}}' class="account">
+    <view><input password='true' bindblur="repasswordInput" placeholder="请再次输入密码" name='repassword' value='{{repassword}}' /></view>
+  </view>
+  <view class='xieyi'><checkbox-group bindchange="gouxuan"><checkbox class='left zoom-80' value="1" color='#DD2B2B' /></checkbox-group><text class='left'>勾选即代表同意</text><text class='left blue' bindtap='blue'>《用户完善资料协议》</text></view>
+  <button class="btn" bindtap='register' type="warn">保存</button>
+</view>
+  <!--用户完善资料协议-->
+  <view class='modal'>
+  <modal title='完善资料' cancel-text='取消' confirm-text='确定'  hidden="{{mhHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+    <view class='black'>用户完善资料协议</view>
+    <view class='detail'>尊敬的客户，欢迎成为”恒易融”平台（www.hengyirong.com，以下简称“恒易融”或“本平台”）用户，在完善资料前请仔细阅读如下服务条款： 本平台由北京恒昌利通投资管理有限公司(以下简称“本公司”)运营管理，并根据本协议的规定向用户提供服务。本协议双方为恒易融用户与本公司，适用于用户使用本平台服务的全部活动。</view>
+  </modal> 
+</view>

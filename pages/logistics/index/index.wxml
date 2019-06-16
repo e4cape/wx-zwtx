@@ -1,0 +1,60 @@
+<!--物流广告-->
+<view wx:if="{{banner}}" class='wuliu-banner'><image src='{{banner}}'></image></view>
+<!--物流面包屑-->
+<view class='wuliu-nav'>
+<text class='wuliu-text'>温馨提示：只有承运商才可进行报价</text>
+<block wx:if="{{memberType != 3 && memberType != 4}}">
+<navigator url='/pages/logistics/applycarrier/index'><text class='wuliu-txt'>成为承运商>></text></navigator>
+</block>
+</view>
+<!--物流列表-->
+<view class='wuliu-list'>
+  <block wx:if="{{dataList != ''}}">
+    <block wx:for="{{dataList}}" wx:key="">
+      <view class='wuliu-list-content'>
+        <view class='left' data-id="{{item.routeId}}" bindtap="deatil">
+          <view class='text'><text>{{item.routeFromCity}}→{{item.routeToCity}}</text></view>
+          <view class='txt'><text>{{item.routeGoodsName}} /{{item.routeMinNumber}}至{{item.routeMaxNumber}}{{item.routeUnit == 1 ? '吨' : '方'}}</text></view>
+          <view class='tet'><text>发布时间：{{item.routeCreateTime}}</text></view>
+        </view>
+        <view class='right'><button class="btn" bindtap='offer' data-membertype="{{memberType}}" data-routeId="{{item.routeId}}" data-routerCarrierId="{{carrierId}}" type="warn">报价</button></view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+      <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+  </block>
+</view>
+<view class='modal'>
+  <modal title='我的报价' cancel-text='取消' confirm-text='报价'  hidden="{{mhHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" data-routeId="{{routeid}}" data-routerCarrierId="{{carrierId}}">
+    <view><input type="number" bindinput="bidPriceInput" placeholder="输入报价" name='mobile' value='{{bidPrice}}' /><text>元/吨</text></view>
+    <view><input type="number" bindinput="bidNumberInput" placeholder="输入车辆承载量" name='mobile' value='{{bidNumber}}' /><text>吨</text></view>
+  </modal>
+</view>
+<!--底部按钮-->
+<view class='submit'>
+<view class='release' bindtap='release'><text>发布货源</text></view>
+<block wx:if="{{memberType == 3 || memberType == 4}}">
+<view class='mywuliu' data-id="{{carrierId}}" bindtap="carrier"><text>我的物流</text></view>
+</block>
+<block wx:else>
+<view class='mywuliu' bindtap="logistics"><text>我的物流</text></view>
+</block>
+</view>
+<!--微信授权登录-->
+<view>
+<modal title='微信授权登录' cancel-text='' confirm-text=''  hidden="{{wxHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+  <view wx:if="{{canIUse}}">
+  <!-- <view class='header'>
+      <image src='/images/wx_login.png'></image>
+  </view> -->
+  <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='warn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+  </button>
+</view>
+</modal> 
+</view>

@@ -1,0 +1,18 @@
+/*我的物流导航*/
+.wuliu-nav{width: 100%;  height: 80rpx; margin: 0rpx auto; border-bottom: 2rpx solid #cccccc;}
+.wuliu-nav text{width: 20%; text-align: center; float: left; height: 80rpx; line-height: 80rpx; color: #666666; font-size: 26rpx;}
+.wuliu-nav .on{color: #DD2B2B;height: 80rpx; border-bottom: 2rpx solid #DD2B2B;}
+/*物流列表*/
+.wuliu-list{width: 100%; margin: 0rpx auto 100rpx;}
+.wuliu-list .wuliu-list-content{height: 110rpx; border-bottom: 1px solid #cccccc; padding: 20rpx 0rpx; margin: 0rpx 30rpx;}
+.wuliu-list .wuliu-list-content .left{ float: left;}
+.wuliu-list .wuliu-list-content .left .text{ color: #666666; font-size: 28rpx; height: 40rpx;line-height: 40rpx;}
+.wuliu-list .wuliu-list-content .left .txt{ color: #666666; font-size: 26rpx; height: 40rpx;line-height: 40rpx;}
+.wuliu-list .wuliu-list-content .left .tet{ color: #999999; font-size: 20rpx; height: 40rpx;line-height: 40rpx;}
+.wuliu-list .wuliu-list-content .right{ float: right; height: 80rpx;}
+.wuliu-list .wuliu-list-content .right .checked{ border:2rpx solid #DD2B2B; color: #DD2B2B; }
+.wuliu-list .wuliu-list-content .right text{ float: left; border:2rpx solid #999999FF; border-radius:4rpx; color: #999999; font-size: 26rpx; width: 110rpx; height: 40rpx; line-height: 40rpx; text-align:center; margin: 15rpx 0rpx 0rpx 10rpx;}
+.wuliu-list .wuliu-list-content .right .wz{margin: 70rpx 0rpx 0rpx 10rpx;}
+.wuliu-list .wuliu-list-content .right navigator{ float: left; border:2rpx solid #999999FF; border-radius:4rpx; color: #999999; font-size: 26rpx; width: 110rpx; height: 40rpx; line-height: 40rpx; text-align:center; margin: 70rpx 0rpx 0rpx 10rpx;}
+.wuliu-list .wuliu-list-content .right .gd{height: 40rpx;}
+.wuliu-list .wuliu-list-content .text-remark{float: right; color: #DD2B2B; font-size: 26rpx; height: 40rpx; line-height: 40rpx; width: 280rpx;}

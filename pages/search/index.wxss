@@ -1,0 +1,31 @@
+/* pages/search/index.wxss */
+/*搜索  */
+.search{ float:left;width:600rpx;height: 60rpx;border: 1rpx solid #EDEDED;background-color: #EDEDED;border-radius: 10rpx;margin: 20rpx 30rpx;overflow:hidden}
+.search .searchtype{float:left;height:60rpx;line-height:60rpx;width:100rpx;text-align:center}
+.search .searchtype text{color: #666666;font-size: 24rpx; padding-right: 10rpx;}
+.search .searchtype image{width: 18rpx; height: 10rpx;}
+.search .input{float:left;font-size: 26rpx;width:398rpx;height: 60rpx;line-height:60rpx; background-color: #EDEDED; text-align: center; color: #999999;}
+.search .searchbox{float:left;width:100rpx;height: 60rpx;line-height:60rpx;text-align: center}
+.search .searchbox .searchIcon{width: 34rpx;height: 34rpx;margin: 20rpx 0 0 30rpx;}
+.search navigator{ position: absolute;right: 5%;top: 32rpx; color: #666666; font-size:22rpx;}
+.search .history{color: #666666; font-size: 28rpx; margin:30rpx 0rpx;}
+.search .history-text{color: #666666; font-size: 22rpx;}
+.search .history-text text{border:2rpx solid #999999; margin-right: 20rpx; padding: 10rpx 20rpx;}
+/*弹窗*/
+.type modal view{margin-bottom: 20rpx;}
+/*店铺列表*/
+.paper-list{color: #666666; font-size: 26rpx; padding:110rpx 0rpx 100rpx; margin: 0rpx 30rpx; }
+.paper-list .content{ float: left; width: 20%; text-align: center; margin: 30rpx auto 20rpx;}
+.paper-list .content view image{ width: 60rpx; height: 60rpx;}
+/*产品列表*/
+.products{ height: auto; padding:110rpx 0rpx 100rpx; }
+.products .products-content{ width: 100%; height: auto; overflow: auto;}
+.products .products-content .goods-list{ width: 45%; float: left;  margin: 10rpx 5rpx 10rpx 26rpx; border: 2rpx solid #EDEDED;}
+.products .products-content .goods-list view{ padding-left:20rpx; }
+.products .products-content .goods-list .img{ width: 100%; height: 300rpx; }
+.products .products-content .goods-list .pname{ color: #666666; font-size: 26rpx;}
+.products .products-content .goods-list .cname{ padding-bottom:20rpx; }
+.products .products-content .goods-list .cname text{ color: #999999; font-size: 26rpx;}
+.products .products-content .goods-list .cname .location{ padding-left: 45rpx;}
+.products .products-content .goods-list text{ color: #666666; font-size: 26rpx;}
+.products .products-content .goods-list .price{color:#AE3737; font-size: 28rpx;}

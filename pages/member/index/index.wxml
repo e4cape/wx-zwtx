@@ -1,0 +1,104 @@
+<!--个人中心头像-->
+<view class='user-image'>
+    <image class='user-bg' src='{{memberAvatar}}' mode="widthFix"></image>
+<!-- <view class='user-pic'>
+<block wx:if="{{!hasUserInfo && canIUse}}">
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="userinfo-btn"> 
+    点击微信授权 
+  </button>
+</block>
+<block wx:else>
+<view bindtap="memberInfo">
+<image src='{{userInfo.avatarUrl}}'></image>
+<view>{{userInfo.nickName}}</view>
+</view>
+</block>
+</view> -->
+    <view class='user-pic'>
+        <view bindtap="memberInfo">
+            <image src='{{memberAvatar}}'></image>
+        <view>{{memberNickname}}</view>
+    </view>
+</view>
+
+</view>
+<!--我的订单-->
+<view class='order' bindtap='orderList' data-status='0'>
+  <text>我的订单</text><image src='/static/images/icon/jt.png'></image>
+</view>
+<!--订单状态-->
+<view class='order-state'>
+  <view class='state' bindtap='orderList' data-status='1'>
+    <image src='/static/images/icon/time.png'></image>
+    <view>待确认</view>
+  </view>
+  <view class='state' bindtap='orderList' data-status='20'>
+    <image src='/static/images/icon/w.png'></image>
+    <view>待发货</view>
+  </view>
+  <view class='state' bindtap='orderList' data-status='30'>
+    <image src='/static/images/icon/sh.png'></image>
+    <view>待收货</view>
+  </view>
+  <view class='state' bindtap='orderList' data-status='40'>
+    <image src='/static/images/icon/wc.png'></image>
+    <view>已完成</view>
+  </view>
+</view>
+<view class='index-border'></view>
+<!--个人中心列表-->
+<block wx:if="{{memberType != 10 }}">
+<view class='user-list'>
+  <view bindtap='enterprise'>
+    <view class='left'><image src='/static/images/icon/g.png'></image><text>企业账号</text></view>
+    <view class='right'><image src='/static/images/icon/jt.png'></image></view>
+  </view>
+</view>
+</block>
+<view class='user-list'>
+  <view bindtap="address">
+    <view class='left'><image src='/static/images/icon/map.png'></image><text>地址管理</text></view>
+    <view class='right'><image src='/static/images/icon/jt.png'></image></view>
+  </view>
+</view>
+<view class='user-list'>
+  <view bindtap="integral">
+    <view class='left'><image src='/static/images/icon/jf.png'></image><text>我的积分</text></view>
+    <view class='right'><text>{{memberIntegral}}积分</text><image src='/static/images/icon/jt.png'></image></view>
+  </view>
+</view>
+<view class='user-list'>
+  <view  bindtap="service">
+    <view class='left'><image src='/static/images/icon/kf.png'></image><text>联系客服</text></view>
+    <view class='right'><image src='/static/images/icon/jt.png'></image></view>
+  </view>
+</view>
+<view class='user-list'>
+  <view>
+    <view class='left'><image src='/static/images/icon/bb.png'></image><text>当前版本</text></view>
+    <view class='right'><text>v.1.56</text></view>
+  </view>
+</view>
+<view class='user-list'>
+  <view bindtap="setting">
+    <view class='left'><image src='/static/images/icon/set.png'></image><text>设置</text></view>
+    <view class='right'><image src='/static/images/icon/jt.png'></image></view>
+  </view>
+</view>
+<!--微信授权登录-->
+<view class='modal'>
+<modal title='微信授权登录' cancel-text='' confirm-text=''  hidden="{{wxHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+  <view wx:if="{{canIUse}}">
+  <!-- <view class='header'>
+      <image src='/images/wx_login.png'></image>
+  </view> -->
+  <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='warn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+  </button>
+</view>
+</modal> 
+</view>

@@ -1,0 +1,29 @@
+/* pages/member/rememberpassword/index.wxss */
+/*忘记密码表单*/
+.content{
+  margin-top: 20px;
+}
+.content .account{
+   border: 1px solid #D7D7D7;
+   margin:20rpx 80rpx; 
+   height: 80rpx;
+   line-height: 80rpx;
+}
+.content .code{width: 53%;}
+.content .code view input{float: left;}
+.content .code view .codeBtn{width:200rpx;height: 80rpx; line-height:80rpx; background-color: #DD2B2B;position: relative;left: 296rpx; bottom:80rpx;color: #FFFFFF; font-size: 26rpx;}
+.content .account view input{
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#999999; 
+  font-size:26rpx;
+  padding-left: 20rpx;
+}
+.btn{
+  width: 100%;
+  position: absolute;
+  bottom: 0rpx;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 0rpx;
+}

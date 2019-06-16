@@ -1,0 +1,32 @@
+<!--我的物流导航-->
+<view class='wuliu-nav'>
+<text bindtap="switchTab" data-status="2" class="{{status == '2' ? 'on' : ''}}">已中标</text>
+<text bindtap="switchTab" data-status="1" class="{{status == '1' ? 'on' : ''}}">已报价</text>
+<text bindtap="switchTab" data-status="4" class="{{status == '4' ? 'on' : ''}}">已结束</text>
+</view>
+<!--物流列表-->
+<view class='wuliu-list'>
+  <block wx:if="{{dataList != ''}}">
+    <block wx:for="{{dataList}}" wx:key="key">
+      <view class='wuliu-list-content'>
+        <view class='left' data-id="{{item.bidRouteId}}" data-bidstate="{{status}}" data-bidcarrierid="{{item.bidCarrierId}}" bindtap="deatil">
+          <view class='text'><text>{{item.route.routeFromCity}}→{{item.route.routeToCity}}</text></view>
+          <view class='txt'><text>{{item.route.routeGoodsName}} /{{item.route.routeMaxNumber}}{{item.route.routeUnit == '1' ? '吨' : '方'}}</text></view>
+          <view class='tet'><text>报价：{{item.bidPrice}}/{{item.route.routeUnit == '1' ? '吨' : '方'}}</text><text>承载量：{{item.bidNumber}}{{item.route.routeUnit == '1' ? '吨' : '方'}}</text></view>
+        </view>
+        <view class='right'>
+          <block wx:if="{{item.bidState == 2}}">
+            <text bindtap='payment' data-bidcarrierid="{{item.bidCarrierId}}" data-routemessageprice="{{item.route.routeMessagePrice}}" data-routesn="{{item.route.routeSn}}" data-type='3' class='checked'>联系方式</text>
+          </block>
+          <block wx:if="{{item.bidState == 4}}">
+            <text class='phone'>电话：{{item.route.routeContactPhone}}</text>
+          </block>
+        </view>
+      </view>
+    <!--点击联系方式提示付款后获取电话：13445456667-->
+    </block>
+  </block>
+    <block wx:else>
+        <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+    </block>
+</view>

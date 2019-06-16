@@ -1,0 +1,13 @@
+/* 促销专区 */
+.promotion-area .cx-product{ margin: 20rpx 30rpx; height: auto; border-bottom: 2rpx solid #D7D7D7; overflow: auto; }
+.promotion-area .cx-product .left{ float: left; padding-top:30rpx;}
+.promotion-area .cx-product .content{padding: 30rpx 0rpx 0rpx 20rpx; width: 70%;}
+.promotion-area .cx-product .left image{ width: 180rpx; height: 180rpx;}
+.promotion-area .cx-product .left .text{color: #666666; font-size: 26rpx;}
+.promotion-area .cx-product .left .txt{color: #999999; font-size: 26rpx;}
+.promotion-area .cx-product .left .sk{border: 2rpx solid #F2ABAD; height: 30rpx; line-height: 30rpx; border-radius: 18rpx; margin: 20rpx 0rpx; width: 320rpx;position: relative;}
+.promotion-area .cx-product .left .sk .stock{position: absolute;z-index: 9;color:#AE3737;font-size: 18rpx;}
+.promotion-area .cx-product .left .sk .percentage{position: absolute;top: 0;z-index: 8;background-color: #F2ABAD; border-radius: 18rpx; height: 30rpx;}
+.promotion-area .cx-product .left .red-line .red{color: #AE3737; font-size: 28rpx;}
+.promotion-area .cx-product .left .red-line .line{color:#666666; font-size:20rpx; text-decoration: line-through; padding-left: 6rpx;}
+.promotion-area .cx-product .right{ float: right; background-color: #DD2B2B; font-size: 26rpx; color: #FFFFFF; border-radius: 10rpx; padding: 20rpx 40rpx; margin-bottom: 10rpx;}

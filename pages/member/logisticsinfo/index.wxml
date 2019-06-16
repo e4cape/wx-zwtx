@@ -1,0 +1,35 @@
+<!--承运详情-->
+<block wx:for="{{dataList}}" wx:key="key">
+<view class='offer-info'><text class='info-text'>承运单号：{{item.route.routeSn}}</text><text class='info-txt'>发布时间：{{item.route.CreateTime}}</text></view>
+<view class='offer-xinxi'>
+  <view>装货地：{{item.route.routeFromAddress}}</view>
+  <view>卸货地：{{item.route.routeToAddress}}</view>
+  <view>车辆要求：{{item.route.routeCarType}} / {{item.route.routeCarLong}}米长</view>
+  <view>货物量：{{item.route.routeMinNumber}}{{item.route.routeUnit == 1 ? '吨' : '方'}}至{{item.route.routeMaxNumber}}{{item.route.routeUnit == 1 ? '吨' : '方'}}</view>
+  <view>货物名称：{{item.route.routeGoodsName}} </view>
+  <block wx:if="{{item.route.routeBeginTime != null}}">
+  <view>装货时间：{{item.route.routeBeginTime}}</view>
+  </block>
+  <block wx:else>
+  <view>装货时间：</view>
+  </block>
+  <block wx:if="{{item.route.routeReceiveTime != null}}">
+  <view>期待送达时间：{{item.route.routeReceiveTime}}</view>
+  </block>
+  <block wx:else>
+  <view>期待送达时间：</view>
+  </block>
+  <view>联系人：{{item.route.routeContactName}}</view>
+  <view>联系电话：{{item.route.routeContactPhone}}</view>
+</view>
+</block>
+<view class='index-border'></view>
+<block wx:for="{{dataList}}" wx:key="key">
+<view class='offer-detail'>
+  <view><text class='left'>承运商</text><text class='right'>{{item.bidCarrierName}}</text></view>
+  <view><text class='left'>报价</text><text class='right'>￥{{item.bidPrice}} / {{item.route.routeUnit == 1 ? '吨':'方'}}</text></view>
+  <view><text class='left'>承载量</text><text class='right'>{{item.bidNumber}}{{item.route.routeUnit == 1 ? '吨':'方'}}</text></view>
+  <view><text class='left'>中标时间</text><text class='right'>{{item.bidTime}}</text></view>
+</view>
+</block>
+<view class='index-border'></view>

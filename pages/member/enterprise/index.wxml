@@ -1,0 +1,67 @@
+<!--开通企业账号-->
+<view class='enterprise'>
+<block wx:if="{{state == 2}}">
+  <view><text>企业名称:</text><text>{{companyName}}</text></view>
+</block>
+<block wx:else>
+  <view><text>企业名称:</text><input bindchange="companyName" name="companyName" placeholder="请输入企业名称" value="{{companyName}}" /></view>
+  </block>
+</view>
+<!--企业资质-->
+<view class='card'>
+  <view class='card-main'>
+  <view class='card-title card-img'><text>企业资质:</text></view>
+    <view class='card-img'>
+    <block wx:if="{{businessLicenseUrl}}">
+      <image class='image' src='{{businessLicenseUrl}}'></image>
+     </block>
+     <block wx:else>
+    <image class='upload' src='/static/images/icon/upload.png'></image>
+    </block>
+    <button class='input' type="default" bindtap='upload' name="businessLicenseUrl"></button>
+    <view>营业执照</view>
+    </view>
+    <view class='card-img'>
+    <block wx:if="{{openBankCertificateUrl}}">
+    <image class='images' src='{{openBankCertificateUrl}}'></image>
+    </block>
+    <block wx:else>
+    <image class='uploads' src='/static/images/icon/upload.png'></image>
+    </block>
+    <button class='inputs' type="default" bindtap='uploadFile' name="openBankCertificateUrl"></button>
+    <view>银行开户许可证</view></view>
+  </view>
+</view>
+<view class='index-border'></view>
+<block wx:if="{{state == 2}}">
+<view class='company-list'>
+<block wx:for="{{memberList}}" wx:key="key">
+<view><text>采购帐号：{{item.memberAccount}}</text><text>原始密码：{{item.initPassword}}</text></view>
+</block>
+</view>
+<view class='index-border'></view>
+</block>
+<!--温馨提示-->
+<view class='apply-info'>
+  <view class='top'><text>温馨提示</text></view>
+  <view class='bottom'>
+  <view>企业帐号开通后会生成一个采购帐号，采购帐号特点如下；</view>
+ <view>1.采购帐号是企业帐号的子帐号，采购帐号采购的订单，企业帐号能看到。</view>
+ <view>2.采购帐号只能采购不能付款，须由企业帐号付款，并且不能查看帐号支付明细</view>
+</view>
+</view>
+<!--提交按钮-->
+<block wx:if="{{state == 0}}">
+<button class="submit" bindtap='comfirm' type="warn">已驳回，重新提交</button>
+<!-- <view class='submit'><text>已驳回，重新提交</text></view> -->
+</block>
+<block wx:elif="{{state == 1}}">
+<view class='btn'><text>审核中</text></view>
+</block>
+<block wx:elif="{{state == 2}}">
+<view><text></text></view>
+</block>
+<block wx:else>
+<button class="submit" bindtap='comfirm' type="warn">提交审核</button>
+</block>
+<!-- <view class='submit'><text>审核中</text></view><view class='submit'><text>已驳回，重新申请</text></view> -->

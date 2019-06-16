@@ -1,0 +1,19 @@
+<!--忘记密码-->
+<view class="content">
+  <view class="account">
+    <view><input bindinput="accountInput" placeholder="请输入手机号" name='memberPhone' value='{{memberPhone}}' /></view>
+  </view>
+  <view class="account code">
+    <view>
+      <input bindinput="codeInput" placeholder="请输入验证码" name='code' value='{{code}}' />
+      <button class='codeBtn' bindtap='getVerificationCode' disabled='{{disabled}}' >{{codename}}</button>
+    </view>
+  </view>
+  <view class="account">
+    <view><input password='true' bindinput="pwdBlur" placeholder="请设置新密码" name='memberPassword' value='{{memberPassword}}' /></view>
+  </view>
+   <view class="account">
+    <view><input password='true' bindblur="repasswordInput" placeholder="请再次输入新密码" name='repassword' value='{{repassword}}' /></view>
+  </view>
+  <button class="btn" bindtap='confirm' type="warn">确认</button>
+</view>

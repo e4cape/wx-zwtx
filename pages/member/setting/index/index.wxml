@@ -1,0 +1,7 @@
+<!--设置-->
+<!-- <view class='setting' bindtap="aboutUs"> -->
+<view class='setting'>
+<navigator url='/pages/member/setting/about/index'>
+  <text>关于我们</text><image src='/static/images/icon/jt.png'></image>
+  </navigator>
+</view>

@@ -1,0 +1,20 @@
+<!--承运详情-->
+<view class='offer-info'><text class='info-text'>承运单号：{{routeSn}}</text><text class='info-txt'>发布时间：{{routeCreateTime}}</text></view>
+<view class='offer-xinxi'>
+  <view>装货地：{{routeFromAddress}}</view>
+  <view>卸货地：{{routeToAddress}}</view>
+  <view>车辆要求：{{routeCarType}} / {{routeCarLong}}米长</view>
+  <view>货物量：{{routeMinNumber}}{{routeUnit == 1 ? '吨' : '方'}}至{{routeMaxNumber}}{{routeUnit == 1 ? '吨' : '方'}}</view>
+  <view>货物名称：{{routeGoodsName}} </view>
+  <block wx:if="{{routeBeginTime != null}}">
+  <view>装货时间：{{routeBeginTime}}</view>
+  </block>
+  <block wx:else>
+  <view>装货时间：</view>
+  </block>
+  <!-- <view>期待送达时间：{{routeReceiveTime}}</view>
+  <view>联系人：{{routeContactName}}</view>
+  <view>联系电话：{{routeContactPhone}}</view> -->
+</view>
+<view class='index-border'></view>
+

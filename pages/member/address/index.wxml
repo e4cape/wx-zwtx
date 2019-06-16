@@ -1,0 +1,18 @@
+<!--pages/member/address/index.wxml-->
+<block wx:if="{{dataList != ''}}">
+  <block wx:for="{{dataList}}" wx:key="key">
+    <view class='address'>
+      <view><text class='name'>{{item.addressee}}</text><text  class='phone'>{{item.phone}}</text></view>
+      <view class='address-info'>{{item.regionName}}{{item.address}}</view>
+      <view>
+        <view class='left'>
+        <checkbox-group bindchange='setting'><checkbox class='left zoom-80' value="{{item.addressId}}" color='#DD2B2B' checked="{{item.isDefault == 1 ? 'checked' : ''}}" /></checkbox-group>设为默认</view>
+        <view class='right'><text bindtap='edit' data-id="{{item.addressId}}">编辑</text><text bindtap='del' data-id="{{item.addressId}}">删除</text></view>
+      </view>
+    </view>
+  </block>
+</block>
+<block wx:else>
+  <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+  </block>
+<view class='addAddress' bindtap='addAddress'><text>新增地址</text></view>

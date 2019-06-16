@@ -1,0 +1,56 @@
+/*我的订单导航*/
+.order-nav{width: 100%;  height: 80rpx; margin: 0rpx auto; border-bottom: 2rpx solid #cccccc;}
+.order-nav text{width: 20%; text-align: center; float: left; height: 80rpx; line-height: 80rpx; color: #666666; font-size: 26rpx;}
+.order-nav .on{color: #DD2B2B;height: 80rpx; border-bottom: 2rpx solid #DD2B2B;}
+/*订单列表*/
+.order-list{width: 100%;height: auto; padding-bottom: 80rpx;}
+.order-list .order-content{padding: 0rpx 30rpx;}
+.order-list .order-content .shopname{width: 100%; height: 80rpx; line-height: 80rpx; border-bottom: 2rpx solid #D7D7D7;}
+.order-list .order-content .shopname .name{ color: #666666;font-size: 26rpx; float: left;}
+.order-list .order-content .shopname .time{ color: #999999;font-size: 26rpx; float: right;}
+.order-list .order-content .product{width: 100%;height: 160rpx; border-bottom: 2rpx solid #D7D7D7; margin-top:20rpx;}
+.order-list .order-content .product .left image{ float: left;width: 120rpx; height: 120rpx; margin: 10rpx; border:2rpx dotted #cccccc;}
+.order-list .order-content .product .right{ float:right; padding-top:30rpx; }
+.order-list .order-content .product .right .number{ color: #666666; font-size: 26rpx;}
+.order-list .order-content .product .right .state{font-size: 26rpx;}
+.order-list .order-content .product .right .yellow{color: #D79C48;}
+.order-list .order-content .product .right .red{color: #DD2B2B;}
+.order-content .btn{height: 58rpx; line-height: 58rpx; margin-top:20rpx; float: right; margin:20rpx 20rpx 30rpx 0rpx;}
+.order-content .btn text{ float: right; font-size: 26rpx; border-radius: 4rpx;}
+.order-content .btn .btn-gray{ padding: 0rpx 30rpx; border: 2rpx solid #C1C1C1; color: #666666;}
+.order-content .btn .btn-red{ padding: 0rpx 45rpx; border: 2rpx solid #DD2B2B;color: #ffffff; background-color: #DD2B2B;}
+.order-content .btn navigator{color: #ffffff; font-size: 26rpx;background: #DD2B2B; float: right; width: 150rpx; text-align: center}
+/*弹框*/
+.modal modal view{overflow: hidden; color: #666666; font-size: 26rpx; line-height: 40rpx; text-align: center;}
+/*色条*/
+.index-border{ width: 100%; height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}
+/*微信弹窗*/
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+}
+
+.header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}

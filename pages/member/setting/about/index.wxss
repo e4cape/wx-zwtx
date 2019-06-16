@@ -1,0 +1,4 @@
+/* pages/member/setting/about/index.wxss */
+.about{ margin:40rpx 30rpx;}
+.about .about-title{ color: #666666; font-size: 36rpx; margin-bottom: 40rpx;}
+.about-content{  color: #666666; font-size: 26rpx; line-height: 40rpx;}

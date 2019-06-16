@@ -1,0 +1,32 @@
+<!--资讯广告-->
+<view wx:if="{{banner}}" class='news-banner'><image src="{{banner}}"></image></view>
+<!--资讯导航-->
+<view class='news-nav'>
+<block wx:for="{{dataCate}}" wx:key="">
+  <text bindtap="switchTab" data-id="{{item.acId}}" class="{{item.acId == acId ?'on':''}}">{{item.acName}}</text>
+</block>
+  <!-- <navigator><text class='on'>行情报价</text></navigator>
+  <navigator><text>市场热点</text></navigator>
+  <navigator><text>综合报道</text></navigator> -->
+</view>
+<!--资讯列表-->
+<view class='news-list'>
+<block wx:if="{{dataList != ''}}">
+  <block wx:for="{{dataList}}" wx:key="">
+    <view class='news-info' data-id="{{item.articleId}}" bindtap="newsClick">
+        <view class='news-common news-image'>
+          <image src='{{item.articleImage}}'></image>
+        </view>
+        <view class='news-common news-title'>
+          <view class='news-title-a'><text>{{item.Title}}</text></view>
+          <view class='news-title-b'><text>{{item.articleFrom}}</text></view>
+
+          <view class='news-title-c'><text>{{item.articleTime}}</text></view>
+        </view>
+    </view>
+  </block>
+</block>
+<block wx:else>
+    <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+</block>
+</view>

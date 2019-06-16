@@ -1,0 +1,10 @@
+/* pages/logistics/car/index.wxss */
+.car{margin: 40rpx 30rpx;}
+.car text{float:left; width:14%; height: 54rpx; line-height: 54rpx; text-align: center; color: #666666; font-size: 26rpx; border: 2rpx solid #C1C1C1; border-radius: 4rpx; margin: 20rpx 7rpx;}
+.car view{color: #666666; font-size: 28rpx;}
+.car .car-text{overflow: auto;}
+.car .car-text text{font-size: 26rpx;}
+.car .car-text .on{background: #DD2B2B;color: #FFFFFF;}
+.car .car-type{margin-top:30rpx;}
+/*提交审核*/
+.submit{width: 100%; height: 100rpx; line-height: 100rpx; text-align: center;background-color: #DD2B2B; position: fixed;bottom: 0;}

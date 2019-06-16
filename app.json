@@ -1,0 +1,91 @@
+{
+"pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/search/index",
+    "pages/member/cart/index",
+    "pages/member/index/index",
+    "pages/member/userinfo/index",
+    "pages/member/setpassword/index",
+    "pages/member/rememberpassword/index",
+    "pages/member/orderlist/index",
+    "pages/member/orderinfo/index",
+    "pages/member/orderinfo/success",
+    "pages/member/logistics/index",
+    "pages/member/logisticslist/index",
+    "pages/member/logisticsinfo/index",
+    "pages/member/carrier/index",
+    "pages/member/address/index",
+    "pages/member/addaddress/index",
+    "pages/member/editaddress/index",
+    "pages/member/integral/index",
+    "pages/member/service/index",
+    "pages/member/route/index",
+    "pages/member/bid/index",
+    "pages/member/about/index",
+    "pages/member/setting/index/index",
+    "pages/member/setting/about/index",
+    "pages/member/enterprise/index",
+    "pages/member/checkbuy/index",
+    "pages/member/comfireorder/index",
+    "pages/goods/detail/index",
+    "pages/goods/list/index",
+    "pages/goods/promotion/index",
+    "pages/news/index/index",
+    "pages/news/detail/index",
+    "pages/logs/logs",
+    "pages/logistics/index/index",
+    "pages/logistics/detail/index",
+    "pages/logistics/applycarrier/index",
+    "pages/logistics/release/index",
+    "pages/logistics/car/index",
+    "pages/shop/index/index",
+    "pages/shop/detail/index",
+    "pages/mingqihui/index/index",
+    "pages/mingqihui/detail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#DD2B2B",
+    "navigationBarTitleText": "纸网天下",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#DD2B2B",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/icon/home.png",
+        "selectedIconPath": "static/images/icon-red/home.png"
+      },
+      {
+        "pagePath": "pages/news/index/index",
+        "text": " 资讯",
+        "iconPath": "static/images/icon/news.png",
+        "selectedIconPath": "static/images/icon-red/news.png"
+      },
+      {
+        "pagePath": "pages/mingqihui/index/index",
+        "text": "名企汇",
+        "iconPath": "static/images/icon/ww.png",
+        "selectedIconPath": "static/images/icon-red/ww.png"
+      },
+      {
+       "pagePath": "pages/member/cart/index",
+        "text": "购物车",
+        "iconPath": "static/images/icon/cart.png",
+        "selectedIconPath": "static/images/icon-red/cart.png"
+      },
+      {
+       "pagePath": "pages/member/index/index",
+        "text": "我的",
+        "iconPath": "static/images/icon/my.png",
+        "selectedIconPath": "static/images/icon-red/my.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

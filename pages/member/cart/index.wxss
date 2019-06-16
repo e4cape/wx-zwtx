@@ -1,0 +1,159 @@
+.table-view{padding-bottom:0rpx;}
+.edit-complete{color: #666666; font-size: 26rpx; text-align: right; padding: 20rpx 20rpx 20rpx 0rpx; border-bottom: 2rpx solid #D7D7D7;}
+.teacher-kes{
+    margin: 0rpx auto;
+  }
+  .teacher-ke{
+    height:60rpx;
+    padding: 12rpx 26rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom:2rpx solid #f1f1f1;
+  }
+  .teacher-ke-name{
+    height: 52rpx;
+    line-height: 52rpx;
+    color: #333;
+    float: left;
+    font-size: 32rpx;
+  }
+
+  .hot-checked {
+    padding:20rpx 26rpx 20rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+  }
+  .teacher-ke .yuan image{width: 30rpx; height: 30rpx; padding-right: 10rpx;}
+  .hot-checked .yuan image{width: 30rpx; height: 30rpx; padding-right: 10rpx;}
+  .Hot-div-img{
+    width:20%;
+    height: 140rpx;
+    margin-right: 20rpx;
+  } 
+  .Hot-div-shop {
+    width:45%;
+  }
+  .hot-price-title{
+    font-size:26rpx;
+    line-height:25rpx; 
+    color: #666666; 
+  }
+  .goodsAttr{line-height: 60rpx;}
+  .goodsAttr .goodsSpec{margin-right: 10rpx;}
+   .shou-word .input{height: 60rpx; line-height: 60rpx; width: 100rpx; float: left; margin-right: 10rpx; padding:5rpx 0rpx 0rpx 5rpx; position: relative;}
+ .shou-word .input .GoodsNorms{width: 60rpx;text-align: center;}
+  .shou-word .mm{height: 60rpx; line-height: 60rpx; text-align: center; float: left;position:absolute;right: 0;top: 0;}
+  .hot-price-title .promote{ color: #D79C48; padding-right: 20rpx; }
+  .shou-word {
+    font-size:22rpx;
+    color: #ababab;
+    overflow: hidden;
+    width:  400rpx;
+  }
+  .shou-word .left{height: 60rpx; line-height: 60rpx; width: 140rpx;  float: left; margin-right: 10rpx; padding-right:5rpx; }
+  .shou-word view image{width: 20rpx; float: left; height: 12rpx; padding: 30rpx 0rpx 0rpx 10rpx;}
+  .shou-word .picker{height: 60rpx; line-height: 60rpx; width: 90rpx; text-align: center; float: left; margin-right: 10rpx; padding-right:5rpx; overflow: auto;}
+  .shou-word .picker .goods{ float: left; width: 60rpx;overflow: hidden;display: inline-block;max-height: 50rpx;}
+  .shou-word .picker image{width: 20rpx; float: left; height: 12rpx; padding: 30rpx 0rpx 0rpx 10rpx;}
+  .shou-word .left input{ width:45%; float: left; padding: 5rpx 0rpx 0rpx 10rpx;}
+  .shou-word .left .mm{ padding-top: 5rpx;}
+  .price text{ padding-right:20rpx; color: #666666; font-size: 26rpx;}
+  .price .line{text-decoration: line-through; font-size: 20rpx; }
+  .border{border-bottom: 2rpx solid #d7d7d7; }
+  .shop-price{text-align: right; height: 100rpx; line-height: 100rpx; padding-right: 20rpx;}
+  .shop-price .count{ color: #666666; font-size: 26rpx;}
+  .shop-price .money{ color: #AE3737; font-size: 26rpx; padding-right: 20rpx;}
+  .shop-price .place-order{ color: #ffffff; font-size: 26rpx; background: #DD2B2B; padding: 20rpx 30rpx;}
+.number .info{color: #666666; font-size: 28rpx; font-weight: bold; margin-bottom: 10rpx;}
+/* .number .label{overflow: auto;} */
+.number .label .num{ padding-left:200rpx; }
+.number .label .number-label{height:42rpx; line-height: 42rpx; border: 2rpx solid #C1C1C1; float: left;}
+.number .label text{float: left; color: #666666;font-size: 28rpx;}
+.number .label .goods_num{width: 50rpx; height: 42rpx; line-height: 42rpx; color: #999999;font-size: 22rpx; float: left; text-align: center; min-height: 42rpx;}
+.number .label .jian{ width: 50rpx; height: 42rpx; line-height: 42rpx; text-align: center; border-right: 2rpx solid #C1C1C1; }
+.number .label .jia{ width: 50rpx; height: 42rpx; line-height: 42rpx; text-align: center; border-left: 2rpx solid #C1C1C1; }
+  .shop-check{
+    width:100%;
+    background: #fff;
+    padding:0rpx 26rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    bottom: 0rpx; 
+    left: 0rpx;
+  }
+  .shop-check view image{ width: 30rpx; height: 30rpx;padding-right: 10rpx; }
+  .shop-check-text{
+    font-size: 30rpx;
+    color: #333;
+  }
+  .shop-check-right {
+    width:68%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin-left: 15%;
+  }
+  .shop-check-he{
+    font-size: 28rpx;
+    color: #333;
+  }
+  .shop-check-he span{
+    color:#FF4500;
+    font-size: 28rpx;
+  }
+  .shop-check-jie{
+    width: 264rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+    font-size:28rpx;
+    color: #fff !important;
+    background: #DD2B2B;
+    margin-left: 20rpx;
+  }
+.modal-spec{position:fixed;width:80%;min-height:100px;border:2rpx solid #C1C1C1; border-radius: 10rpx; background:#ffffff;bottom:40%;right:6%; padding: 30rpx 0rpx 30rpx 50rpx;z-index:99999;}
+.modal{width:100%; overflow: auto; height: 320rpx;}
+.modal-spec .specBox{float: left; overflow: auto; } 
+.modal-spec .specBox .spec{ text-align: center; color: #666666; font-size: 26rpx; border: 2rpx solid #C1C1C1; margin-right:10rpx; min-width: 140rpx;padding: 10rpx 20rpx; display: inline-block; margin-bottom: 8rpx;}
+.closespec{border:2rpx solid #DD2B2B; border-radius: 10rpx; width: 138rpx; height: 60rpx; line-height: 60rpx; background: #DD2B2B; color:#ffffff; font-size:28rpx; text-align: center; float: left; margin-top:20rpx; margin-left:40%;}
+  /*色条*/
+.index-border{ height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}
+/*微信弹窗*/
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+}
+
+.header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}
+.not_cart{width: 100%;}
+.not_cart image{width: 100%;height: 500rpx;}
+.select.picker{position: relative;}
+.select_box{position: absolute;top: 40rpx;background: #fff;min-width: 60rpx;z-index: 999;}
+.select_box .option{line-height: 30rpx;padding: 5rpx 5rpx;border-bottom: 1rpx solid #d7d7d7;}

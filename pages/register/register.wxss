@@ -1,0 +1,47 @@
+/* pages/register/register.wxss */
+/* 背景大图 */
+.login-img{margin: 0rpx auto;}
+.login-img .bj{ width:100%; height: 600rpx; }
+.login-img .logoo{ position: absolute; top: 160rpx; left:45%; width: 128rpx; height: 120rpx;}
+/*注册表单*/
+.login-register{height: 80rpx; line-height: 80rpx;}
+.login-register .on{ color: #DD2B2B; border-bottom: 2rpx solid #DD2B2B;}
+.login-register navigator{width: 50%; height: 80rpx; text-align: center; float: left;}
+.content{
+  margin-top: 20px;
+}
+.content .account{
+   border: 1px solid #D7D7D7;
+   margin:20rpx 80rpx; 
+   height: 80rpx;
+   line-height: 80rpx;
+}
+.content .code{width: 53%;}
+.content .code view input{float: left;}
+/*.content .code view navigator{ width:200rpx;height: 80rpx;background-color: #DD2B2B;position: relative;left: 394rpx;}
+.content .code view navigator text{ color: #FFFFFF; font-size: 26rpx;position: relative;left: 42rpx; bottom:85rpx;}*/
+.content .code view .codeBtn{
+  width:200rpx;height: 80rpx; line-height:80rpx; background-color: #DD2B2B;position: relative;left: 296rpx; bottom:80rpx;color: #FFFFFF; font-size: 26rpx
+}
+.content .account view input{
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#999999; 
+  font-size:26rpx;
+  padding-left: 20rpx;
+}
+.content .xieyi{ height: 60rpx; line-height: 60rpx; text-align:center; padding:40rpx 0rpx 40rpx 156rpx;}
+.content .xieyi checkbox{zoom:70%;}
+.content .xieyi text{color: #999999; padding-top: 5rpx;}
+.content .xieyi .blue{color: #689FDD; padding-top: 5rpx; }
+.content .xieyi .left{float: left; font-size: 26rpx;}
+.btn{
+  width: 50%;
+  margin: 0rpx auto 40px;
+  color: #FFFFFF;
+  border-radius: 70rpx;
+}
+/*弹框*/
+.modal modal view{overflow: hidden; line-height: 40rpx; margin-bottom: 20rpx;}
+.modal modal .black{color: #000000; font-size: 40rpx;}
+.modal modal .detail{color: #666666; font-size: 26rpx;}

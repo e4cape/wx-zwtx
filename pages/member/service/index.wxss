@@ -1,0 +1,6 @@
+/* pages/member/service/index.wxss */
+.service{margin:40rpx 50rpx;}
+.workday{color: #666666; font-size: 28rpx; margin-bottom:40rpx;}
+.time{color: #666666; font-size: 26rpx;}
+.tel{color: #666666; font-size: 32rpx;}
+.tel image{width: 46rpx; height: 46rpx; margin-top:40rpx; padding-right: 20rpx;}

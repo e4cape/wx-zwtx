@@ -1,0 +1,87 @@
+<!--详情大图-->
+<view class='product-img'><image mode="widthFix" style='width:100%;' src='{{goodsDefaultImage}}'></image></view>
+<!--产品信息-->
+<view class='product-info'>
+  <view class='product-text'>
+    <view><text>{{goodsName}}</text><block wx:if="{{sdSpec2Name != ''}}"><text class='right text'>规格：{{sdSpec2Name}}</text></block></view>
+    <view>
+    <text class='red'>￥{{sdGoodsSellPrice}}</text><text>/{{unit}}</text>
+    <text class='line'>￥{{sdGoodsMarketPrice}}/{{unit}}</text>
+    <block wx:if="{{remainingStock != ''}}">
+    <text class='right txt'>库存：{{remainingStock}}{{unit}}</text>
+    </block>
+    </view>
+  </view>
+</view>
+<!--产品福利-->
+<view class='product-welfare'>
+  <view><image src='/static/images/icon/gou.png'></image><text>交易保障</text></view>
+  <view><image src='/static/images/icon/gou.png'></image><text>原厂原包</text></view>
+  <view><image src='/static/images/icon/gou.png'></image><text>正品保障</text></view>
+</view>
+<view class='index-border'></view>
+<!--产品信息详情-->
+<view class='product-content'>
+<block wx:if="{{contactsName != '' || contactsPhone != '' || supplier != '' || area != ''}}">
+<view class='product-detail'>
+  <view class='product-text'>
+    <view>
+    <block wx:if="{{contactsName != ''}}">
+    <text>联系人：{{contactsName}}</text>
+    </block>
+    <block wx:if="{{contactsPhone != ''}}">
+    <text class='right'>联系电话：{{contactsPhone}}</text>
+    </block>
+    </view>
+    <view>
+    <block wx:if="{{supplier != ''}}">
+    <text>供应商：{{supplier}}</text>
+    </block>
+    <block wx:if="{{area != ''}}">
+    <text class='right'>产地：{{area}}</text>
+    </block>
+    </view>
+  </view>
+</view>
+</block>
+<view class='products-img'>
+<block wx:for="{{goodsDetail}}" wx:key="">
+<image mode="widthFix" style='width:100%;' src='{{item}}'></image>
+</block>
+</view>
+</view>
+<!--提交按钮-->
+<view class='shop-btn'>
+  <navigator open-type='switchTab' url='/pages/member/cart/index' class='btn-image'><image src='/static/images/icon/cart.png'></image></navigator>
+  <view class="operate">
+      <view bindtap='addcart' data-goodsid="{{goodsId}}" data-goodsstoreid="{{goodsStoreId}}" data-goodsspecid="{{goodsSpecId}}" data-sdspec1name="{{sdSpec1Name}}" data-sdspec2name="{{sdSpec2Name}}" data-image="{{goodsDefaultImage}}" data-goodsname="{{goodsName}}" data-cateid="{{cateId}}" class='addcart' data-type="0">加入购物车</view>
+      <view bindtap='buy' data-goodsid="{{goodsId}}" data-goodsstoreid="{{goodsStoreId}}" data-goodsspecid="{{goodsSpecId}}" data-sdspec1name="{{sdSpec1Name}}" data-sdspec2name="{{sdSpec2Name}}" data-image="{{goodsDefaultImage}}" data-goodsname="{{goodsName}}" data-cateid="{{cateId}}" class='buy' data-type="1">立即抢购</view>
+  </view>
+ 
+</view>
+<!--规格弹窗-->
+<view class='modal'>
+  <modal title='规格数量' cancel-text='取消' confirm-text='确定'  hidden="{{mhHidden}}" bindconfirm="comfire" bindcancel="modelCancel">
+  <block wx:if="{{cateId == 1}}">
+    <view><input type="number" bindinput="cartGoodsNorms" placeholder="请输入规格" name='cartGoodsNorms' value='{{cartGoodsNorms}}' /><text>mm</text></view>
+  </block>
+    <view><input type="number" bindinput="cartNum" placeholder="请输入需求量" name='mobile' value='{{cartNum}}' /><text>{{unit}}</text></view>
+  </modal>
+</view>
+<!--微信授权登录-->
+<view>
+<modal title='微信授权登录' cancel-text='' confirm-text=''  hidden="{{wxHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+  <view wx:if="{{canIUse}}">
+  <!-- <view class='header'>
+      <image src='/images/wx_login.png'></image>
+  </view> -->
+  <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='warn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+  </button>
+</view>
+</modal> 
+</view>

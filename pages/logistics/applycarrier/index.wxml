@@ -1,0 +1,53 @@
+<!--承运商申请基本资料-->
+<view class='carrier'>
+  <view><text>姓名</text><input bindchange="carrierName" name="carrierName" placeholder="请输入您的真实姓名" value="{{carrierName}}" /></view>
+  <view><text>身份证</text><input type='idcard' bindchange="carrierIdcard" name="carrierIdcard" placeholder="请输入您的身份证号" value="{{carrierIdcard}}" /></view>
+  <view><text>手机号</text><input type='number' bindchange="carrierPhone" name="carrierPhone" placeholder="请输入您的手机号" value="{{carrierPhone}}" /></view>
+</view>
+<!--承运商申请身份证信息-->
+<view class='card'>
+  <view class='card-title'><text>身份证</text></view>
+  <view class='card-main'>
+  <block wx:if="{{carrierZidcardImage}}">
+    <view class='card-img'><image class='upload' src='{{carrierZidcardImage}}'></image><button type="default"  bindtap='upload' name="carrierZidcardImage"></button><view>身份证正面照</view></view>
+  </block>
+  <block wx:else>
+        <view class='card-img'><image class='upload' src='/static/images/icon/upload.png'></image><button type="default"  bindtap='upload' name="carrierZidcardImage"></button><view>身份证正面照</view></view>
+  </block>
+  <block wx:if="{{carrierFidcardImage}}">
+    <view class='card-img'><image class='uploads' src='{{carrierFidcardImage}}'></image><button type="default" bindtap='uploadFile' name="carrierFidcardImage"></button><view>身份证反面照</view></view>
+  </block>
+  <block wx:else>
+        <view class='card-img'><image class='uploads' src='/static/images/icon/upload.png'></image><button type="default" bindtap='uploadFile' name="carrierFidcardImage"></button><view>身份证反面照</view></view>
+  </block>
+  <block wx:if="{{businessLicenseImage}}">
+    <view class='card-img'><image class='uploadss' src='{{businessLicenseImage}}'></image><button type="default" bindtap='uoloadImg' name="businessLicenseImage"></button><view>营业执照</view></view>
+  </block>
+  <block wx:else>
+        <view class='card-img'><image class='uploadss' src='/static/images/icon/upload.png'></image><button type="default" bindtap='uoloadImg' name="businessLicenseImage"></button><view>营业执照</view></view>
+  </block>
+    <!-- <view class='card-img'><image src='/static/images/icon/upload.png'></image><view>身份证反面照</view></view>
+    <view class='card-img'><image src='/static/images/icon/upload.png'></image><view>营业执照</view></view> -->
+  </view>
+</view>
+<view class='index-border'></view>
+<!--申请须知-->
+<view class='apply-info'>
+  <view class='top'><text>申请须知</text></view>
+  <view class='bottom'><text>中标后承运方付信息费看到货主联系方式，信息费按吨或方收取
+</text></view>
+</view>
+<!--提交按钮-->
+<block wx:if="{{carrierState == 0}}">
+<view class='submit' bindtap='reapply'><text>已驳回，重新申请</text></view>
+</block>
+<block wx:elif="{{carrierState == 2}}">
+<view class='btn'><text>审核中</text></view>
+</block>
+<block wx:elif="{{carrierState == 1}}">
+<view><text></text></view>
+</block>
+<block wx:elif="{{carrierState != 0 || carrierState != 1 || carrierState != 2}}">
+<button class="submit" bindtap='comfirm' type="warn">提交审核</button>
+</block>
+<!-- <view class='submit'><text>审核中</text></view><view class='submit'><text>已驳回，重新申请</text></view> -->

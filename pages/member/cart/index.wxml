@@ -1,0 +1,161 @@
+<view class="table-view">
+  <block wx:if="{{dataList != ''}}">
+    <view class='edit-complete' bindtap='edit' data-value='0' hidden='{{hHidden}}'>编辑</view>
+    <view class='edit-complete' bindtap='complete' data-value='1' hidden='{{hhHidden}}'>完成</view>
+  <block wx:for="{{dataList}}" wx:key="{{index}}" wx:for-index="groupIndex">
+    <view>
+      <view class="teacher-kes">
+        <view class="teacher-ke">
+          <view hidden="{{mhHidden}}" class='yuan'>
+            <block wx:if="{{item.check_all == 1}}">
+              <view bindtap='unCheckedAll' data-list="{{item.list}}">
+                <image src='/static/images/icon/gou.png'></image>
+              </view>
+            </block>
+            <block wx:if="{{item.check_all == 0}}">
+              <view bindtap='checkedAll' data-list="{{item.list}}">
+                <image src='/static/images/icon/yuan.png'></image>
+              </view>
+            </block>
+          </view>
+          <text class="teacher-ke-name">{{item.cartStoreName}}</text>
+        </view>
+        <block wx:for="{{item.list}}"  wx:key="{{index}}">
+          <view class="hot-div hot-checked">
+            <view hidden="{{mhHidden}}" class='yuan' bindtap='Checks1' data-cartid="{{item.cartId}}" data-cartnum="{{item.cartNum}}" data-cartgoodsnorms="{{item.cartGoodsNorms}}" data-cartgoodsspecid="{{item.cartGoodsSpecId}}" data-goodsid="{{item.goodsId}}" data-goodsname="{{item.goodsName}}" data-mprice="{{item.mprice}}" data-price="{{item.price}}" data-cartstate="{{item.cartState}}" data-goodscateid="{{item.goodsCateId}}">
+              <block wx:if="{{item.cartState == 2}}">
+                <image src='/static/images/icon/yuan.png'></image>
+              </block>
+              <block wx:if="{{item.cartState == 1}}">
+                <image src='/static/images/icon/gou.png'></image>
+              </block>
+            </view>
+            <image src="{{item.goodsDefaultImage}}" class="Hot-div-img"></image>
+            <view class="Hot-div-shop ">
+              <view class="hot-price-title">
+                <!-- 是否限时促销 -->
+                <block wx:if="{{item.isHot == 1}}">
+                  <text class='promote'>限时促销</text>
+                </block>
+                <text>{{item.goodsName}}</text>
+              </view>
+              <view class="shou-word">
+             
+              <view class="edit_box" hidden="{{mhHidden}}">
+               <!-- 判断是否为限时促销商品 -->
+               <!-- 促销商品不可以进行规格重选 -->
+                <block wx:if="{{item.isHot == 1}}">
+                  <view class="left">
+                    <text class="GoodsSpec">{{item.cartGoodsSpec1Name}} {{item.cartGoodsSpec2Name}}</text>
+                  </view>
+                </block>
+                <block wx:else>
+                <!-- 非促销商品可以进行规格重选 -->
+                <!-- picker规格属性选则 -->
+                  <block wx:for="{{item.specTypeList}}" wx:key="" wx:for-item="specItem" wx:for-index="specIndex">
+                    <picker bindchange="bindPickerChange" data-key="{{item.cartId+'_'+item.goodsId+'_'+specIndex}}" data-cartid="{{item.cartId}}" data-index="{{specIndex}}" value="{{index}}" range-key="name" range="{{item[item.cartId+'_'+item.goodsId+'_'+specIndex]}}">
+                      <view class="picker">
+                        <block wx:if="{{specIndex == 0}}">
+                          <text class="goods" data-cate="{{index}}">{{item.cartGoodsSpec1Name}}</text> 
+                        </block>
+                        <block wx:else>
+                          <text class="goods" data-cate="{{index}}">{{item.cartGoodsSpec2Name}}</text>
+                        </block>
+                          <image class="down" src="/static/images/icon/xl.png"></image>
+                        </view>
+                      </picker>
+                    </block>
+                  </block>
+                  <!-- 判断是否为成品纸分类 -->
+                  <block wx:if="{{item.goodsCateId == 1}}">
+                    <view class='input'>
+                        <input class="GoodsNorms" bindinput="cartGoodsNorms" data-cartid="{{item.cartId}}" data-cartnum="{{item.cartNum}}" data-cartgoodsspecid="{{item.cartGoodsSpecId}}" data-goodsid="{{item.goodsId}}" data-goodsname="{{item.goodsName}}" data-mprice="{{item.mprice}}" data-price="{{item.price}}" data-cartstate="{{item.cartState}}" data-goodscateid="{{item.goodsCateId}}" type='number' value="{{item.cartGoodsNorms}}"></input>
+                        <view class='mm'>mm</view>
+                    </view>
+                  </block>
+                </view>
+                <!-- 非编辑状态下的默认显示 -->
+                <view class="goodsAttr" hidden="{{!mhHidden}}">
+                    <text class="goodsSpec">{{item.cartGoodsSpec1Name}} {{item.cartGoodsSpec2Name}}</text>
+                    <block wx:if="{{item.goodsCateId == 1}}">
+                      <text>{{item.cartGoodsNorms}}mm</text>
+                    </block>
+                </view>
+              </view>
+              <!-- 商品价格 -->
+              <view class="price">
+                <text>￥{{item.price}}/{{item.unit}}</text><text class='line'>￥{{item.mprice}}/{{item.unit}}</text>
+              </view>
+          </view>
+          <!-- 编辑状态下的数量修改 -->
+          <view class='number'>
+            <view class='label'>
+              <view hidden='{{numHidden}}'>
+                <text class='num'>x{{item.cartNum}}</text>
+              </view>
+              <view hidden="{{mhHidden}}" class='number-label'>
+                <text class='jian' bindtap='jian' data-cartid="{{item.cartId}}" data-cartnum="{{item.cartNum}}" data-cartgoodsnorms="{{item.cartGoodsNorms}}" data-cartgoodsspecid="{{item.cartGoodsSpecId}}" data-goodsid="{{item.goodsId}}" data-goodsname="{{item.goodsName}}" data-mprice="{{item.mprice}}" data-price="{{item.price}}" data-cartstate="{{item.cartState}}" data-goodscateid="{{item.goodsCateId}}">-</text>
+                <input type='text' bindinput="goodsNum" data-cartid="{{item.cartId}}" data-cartgoodsnorms="{{item.cartGoodsNorms}}" data-cartgoodsspecid="{{item.cartGoodsSpecId}}" data-goodsid="{{item.goodsId}}" data-goodsname="{{item.goodsName}}" data-mprice="{{item.mprice}}" data-price="{{item.price}}" data-cartstate="{{item.cartState}}" data-goodscateid="{{item.goodsCateId}}" class="goods_num" value="{{item.cartNum}}" ></input>
+                <text class='jia' bindtap='jia' data-cartid="{{item.cartId}}" data-cartnum="{{item.cartNum}}" data-cartgoodsnorms="{{item.cartGoodsNorms}}" data-cartgoodsspecid="{{item.cartGoodsSpecId}}" data-goodsid="{{item.goodsId}}" data-goodsname="{{item.goodsName}}" data-mprice="{{item.mprice}}" data-price="{{item.price}}" data-cartstate="{{item.cartState}}" data-goodscateid="{{item.goodsCateId}}">+</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='border'></view>
+        <!-- 价格数量总计 -->
+        <view class='shop-price'>
+          <text class='count'>共{{item.count}}件 合计：</text><text class='money'>￥{{item.total_price}}</text>
+          <text bindtap='placeOrder' data-cartstoreid="{{item.cartStoreId}}" data-count="{{item.count}}" class='place-order'>提交订单</text>
+          </view>
+        <view class='index-border'></view>
+      </view>
+    </view>
+    <view hidden="{{mhHidden}}" class="shop-check">
+      <!-- <checkbox-group bindchange="AllTap" data-index="{{index}}">
+        <checkbox checked='{{checkedAll}}'></checkbox>
+      </checkbox-group>
+      <text class="shop-check-text">全选</text> -->
+      <block wx:if="{{item.check_all == 1}}">
+        <view bindtap='unSelectAll' data-list="{{item.list}}">
+          <image src='/static/images/icon/gou.png'></image>
+          <text class="shop-check-text">全选</text>
+        </view>
+      </block>
+      <block wx:if="{{item.check_all == 0}}">
+        <view bindtap='selectAll' data-list="{{item.list}}">
+          <image src='/static/images/icon/yuan.png'></image>
+          <text class="shop-check-text">全选</text>
+        </view>
+      </block>
+        <view class="shop-check-right" bindtap='deleteSelect' data-datalist="{{dataList}}">
+            <view class="shop-check-jie">删除所选</view> 
+          </view>
+        </view>
+      </block>
+    </block>
+  <block wx:else>
+  <!-- 购物车为空提示 -->
+    <view class="not_cart">
+      <image src="/static/images/icon/not_cart.png" mode="widthFix"></image>
+    </view>
+  </block>
+</view>
+<!--微信授权登录-->
+<view class='modal'>
+<modal title='微信授权登录' cancel-text='' confirm-text=''  hidden="{{wxHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+  <view wx:if="{{canIUse}}">
+  <!-- <view class='header'>
+      <image src='/images/wx_login.png'></image>
+  </view> -->
+  <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='warn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+  </button>
+</view>
+</modal> 
+</view>
+

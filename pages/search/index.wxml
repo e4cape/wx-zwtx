@@ -1,0 +1,44 @@
+<!--pages/search/index.wxml-->
+<!--搜索  -->
+  <view class="search">
+      <view class="searchtype" bindtap='searchType'><text>{{typeName}}</text><image src="/static/images/icon/xl.png"></image></view>
+      <input class="input" bindinput="keywordInput" placeholder="请输入要搜索的信息" name='keyword' value='{{keyword}}' confirm-type="search" bindconfirm="inputSearch"></input>
+      <view class="searchbox" bindtap='search'><image class="searchIcon" src="/static/images/icon/s.png"></image></view>
+      <navigator open-type="switchTab" url='/pages/index/index'>取消</navigator>
+      <!-- <view class='history'>历史记录</view>
+      <view class='history-text'>
+      <block wx:for="{{searchRecords}}" wx:key="">
+      <text bindtap='getKeyword' data-keyword="{{item.keyword}}">{{item.keyword}}</text>
+      </block>
+      </view> -->
+  </view>
+  <!--搜索类型弹窗-->
+<view class='type'>
+<modal title='' cancel-text='' confirm-text='' hidden="{{mHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" >
+      <view bindtap='product'>商品</view>
+      <text bindtap='store'>店铺</text>
+</modal> 
+</view>
+<!--产品列表-->
+<block wx:if="{{typeValue == 1}}">
+<view class='products'>
+    <view class='products-content'>
+      <block wx:for="{{dataList}}" wx:key="">
+        <view class='goods-list' data-goodsid="{{item.goodsId}}" data-storeid="{{item.goodsStoreId}}" bindtap="storeClick">
+          <image class="img" src="{{item.goodsDefaultImage}}"></image>
+          <view><text class='price'>￥{{item.goodsPrice}}</text><text>/{{item.unit}}</text></view>
+          <view class='pname'>{{item.goodsName}}</view><view class='cname'><text>{{item.goodsStoreName}}</text><text class='location'>{{item.areaName}}</text></view>
+        </view>
+      </block>
+    </view>
+</view>
+</block>
+<!--店铺列表-->
+<block wx:if="{{typeValue == 2}}">
+<view class='paper-list'>
+<block wx:for="{{dataList}}">
+  <view class='content' data-storeid="{{item.storeId}}" data-cateid="{{item.cateId}}" bindtap="switchTab" ><view><image src='{{item.storeBrand}}'></image><view>{{item.storeName}}</view></view></view>
+</block>
+</view>
+</block>
+  

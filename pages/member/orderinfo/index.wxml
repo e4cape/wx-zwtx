@@ -1,0 +1,151 @@
+<!--pages/member/orderinfo/index.wxml-->
+<view class='table-view'>
+<view class='address' bindtap='addressList'>
+<view class='left'>
+<view><text class='name'>{{orderAddressee}}</text><text class='phone'>{{orderContact}}</text></view>
+<view class='address-info'>{{orderAddress}}</view>
+</view>
+</view>
+<view class='index-border'></view>
+<!--产品信息-->
+      <view class="teacher-kes">
+        <view class="teacher-ke">
+          <text class="teacher-ke-name">{{storeName}}</text>
+          <block wx:if="{{orderState == 1}}">
+          <text class="right yellow">待商家确认</text>
+          </block>
+          <block wx:if="{{orderState == 10}}">
+          <text class="right red">待付款</text>
+          </block>
+          <block wx:if="{{orderState == 16}}">
+          <text class="right red">待付款(线下支付)</text>
+          </block>
+          <block wx:if="{{orderState == 20}}">
+          <text class="right red">待发货</text>
+          </block>
+          <block wx:if="{{orderState == 30}}">
+          <text class="right yellow">已发货</text>
+          </block>
+          <block wx:if="{{orderState == 40}}">
+          <text class="right gray">已完成</text>
+          </block>
+          <block wx:if="{{orderState == 0}}">
+          <text class="right gray">已取消</text>
+          </block>
+          <block wx:if="{{orderState == 15}}">
+          <text class="right yellow">商家备货中</text>
+          </block>
+        </view>
+        <block wx:for="{{dataList}}" wx:key="">
+          <view class="hot-div hot-checked ">
+            <image src="{{item.ogGoodsImage}}" class="Hot-div-img"></image>
+            <view class="Hot-div-shop ">
+              <view class="hot-price-title">
+              <block wx:if="{{item.isHot == 1}}">
+              <text class='promote'>限时促销</text>
+              </block>
+              <text>{{item.ogGoodsName}}</text>
+              </view>
+              <view class="shou-word" style="margin-top: 12rpx;">
+              <view><text>{{item.ogGoodsSpec}}  {{item.goodsNorms}}mm</text></view>
+              </view>
+              <view class="price" style="margin-top: 8rpx;">
+                <text>￥{{item.ogGoodsPrice}}/{{item.unit}}</text><text class='line'>￥{{item.ogGoodsMarketPrice}}/{{item.unit}}</text>
+              </view>
+              <view>
+              </view>
+            </view>
+            <view class='number'>
+              <text>x{{item.ogNumber}}</text>
+              </view>
+          </view>
+        </block>
+      </view>
+      <view class='index-border'></view>
+      <view class='order-info'>
+        <view><text>订单编号</text><text>{{oeOrderSn}}</text></view>
+        <view><text>下单时间</text><text>{{orderCreate}}</text></view>
+        <view><text>采购帐号</text><text>{{orderBuyerAccount}}</text></view>
+      </view>
+      <view class='index-border'></view>
+      <!--提货时间-积分抵扣-买家留言-->
+      <view class='cartinfo'>
+      <view class='left'>
+      <view><text class='type'>提货时间</text><text class='type-value'>{{orderReceiveTime}}</text></view>
+      </view>
+      </view>
+      <view class='cartinfo'>
+      <view class='left'>
+      <view><text class='type'>积分抵扣</text><text class='type-value'>可用积分抵扣{{integralMoney}}元</text></view>
+      </view>
+      </view>
+      <view class='cartinfo'>
+      <view class='left'>
+      <view>
+      <text class='type'>买家留言</text>
+      <block wx:if="{{orderBuyerMessage != ''}}">
+      <text class='type-value'>{{orderBuyerMessage}}</text>
+      </block>
+      </view>
+      </view>
+      </view>
+      <view class='index-border'></view>
+      <!--获取榜单-->
+      <view class='cartinfo' bindtap='goodsList'>
+      <view class='left'>
+      <view><text class='type'>货物磅单</text></view>
+      </view>
+      <view class='right'><image src='/static/images/icon/more2.png'></image></view>
+      </view>
+      <!--货物榜单弹窗-->
+      <view class='modal'>
+      <modal title='货物榜单' cancel-text='' confirm-text=''  hidden="{{mhHidden}}" bindconfirm="changeModel" bindcancel="modelCancel">
+      <view><image src='{{listImage}}'></image></view>
+      </modal>
+      </view>
+      <!--商家留言-->
+      <view class='cartinfo'>
+      <view class='left'>
+      <view>
+      <text class='type'>商家留言</text>
+      <block wx:if="{{orderSellerMessage != ''}}">
+      <text class='type-value'>{{orderSellerMessage}}</text>
+      </block>
+      </view>
+      </view>
+      </view>
+      <view class='index-border'></view>
+      <view class='cartinfo'>
+      <view class='right'>共{{totalNum}}件  应付款：<text class='red'>￥{{orderTotal}}</text></view>
+      </view>
+      <!--提交按钮-->
+      <block wx:if="{{orderState == 10}}">
+      <view class='shop-price'>
+        <text bindtap='pay' class='place-order red'>去付款</text>
+      </view>
+      </block>
+      <block wx:if="{{orderState == 0}}">
+      <view class='shop-price'>
+      <text bindtap='del'  data-ordersn="{{oeOrderSn}}" class='place-order gray'>删除订单</text> 
+      </view>
+      </block>
+      <block wx:if="{{orderState == 1}}">
+      <view class='shop-price'>
+      <text bindtap='cancel'  data-ordersn="{{oeOrderSn}}" class='place-order gray'>取消订单</text> 
+      </view>
+      </block>
+      <block wx:if="{{orderState == 30}}">
+      <view class='shop-price'>
+      <text bindtap='comfire'  data-ordersn="{{oeOrderSn}}" class='place-order red'>确认收货</text> 
+      </view>
+      </block>
+      </view>
+<!--支付页面跳转-->
+<view class='modal'>
+  <modal title='支付提示' cancel-text='' confirm-text=''  hidden="{{ppHidden}}" bindconfirm="changeModel">
+    <view>提示：因订单是大宗商品交易，无法在通过手机进行支付，请在复制下方链接在电脑端打开进行支付</view>
+    <view style='margin-top:20rpx;'>电脑端链接：<text selectable="true">https://hao.360.com/?h_lnk</text></view>
+    <view style='color:#DD2B2B;'>提示：长按上方链接可复制链接</view>
+    <view style='font-size:28rpx; margin-top:20rpx; padding-top:20rpx; border-top:2rpx solid #D7D7D7;' bindtap="payCancel">关闭</view>
+  </modal>
+</view>

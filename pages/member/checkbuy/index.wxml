@@ -1,0 +1,82 @@
+<!--pages/member/checkbuy/index.wxml-->
+<view class='table-view'>
+<view class='address' bindtap='addressList'>
+<view class='left'>
+<view><text class='name'>{{defaultList.addressee}}</text><text class='phone'>{{defaultList.phone}}</text></view>
+<view class='address-info'>{{defaultList.address}}</view>
+</view>
+<view class='right'><image src='/static/images/icon/more2.png'></image></view>
+</view>
+<view class='modal'>
+  <modal title='地址列表' cancel-text='' confirm-text=''  hidden="{{mhHidden}}" bindconfirm="changeModel" bindcancel="modelCancel" data-routeId="{{routeid}}" data-routerCarrierId="{{carrierId}}">
+  <block wx:for="{{addressList}}" wx:key="">
+    <view bindtap='select' data-addressId="{{item.addressId}}" data-addressee="{{item.addressee}}" data-phone="{{item.phone}}" data-address="{{item.address}}" ><text class="addressee">{{item.addressee}}</text><text class="phone">{{item.phone}}</text><text class="address">{{item.address}}</text></view>  
+  </block>
+  </modal>
+</view>
+<view class='index-border'></view>
+<!--产品信息-->
+<block wx:for="{{goodsList}}" wx:key="">
+      <view class="teacher-kes">
+        <view class="teacher-ke">
+          <text class="teacher-ke-name">{{item.cartStoreName}}</text>
+        </view>
+        <block wx:for="{{item.list}}" wx:key="">
+          <view class="hot-div hot-checked ">
+            <image src="{{item.goodsDefaultImage}}" class="Hot-div-img"></image>
+            <view class="Hot-div-shop ">
+              <view class="hot-price-title"><text class='promote'>{{item.isHot == 1 ? '限时促销' : ''}}</text><text>{{item.goodsName}}</text></view>
+              <view class="shou-word" style="margin-top: 12rpx;">
+              <block wx:if="{{item.goodsCateId == 1}}">
+                <view><text>{{item.cartGoodsSpec}}  {{item.cartGoodsNorms}}mm</text></view>
+              </block>
+              <block wx:else>
+                <view><text>{{item.cartGoodsSpec}}</text></view>
+              </block>
+              </view>
+              <view class="price" style="margin-top: 8rpx;">
+                <text>￥{{item.price}}/{{item.unit}}</text><text class='line'>￥{{item.mprice}}/{{item.unit}}</text>
+              </view>
+              <view>
+              </view>
+            </view>
+            <view class='number'>
+              <text>x{{item.cartNum}}</text>
+              </view>
+          </view>
+        </block>
+      </view>
+      </block>
+      <view class='index-border'></view>
+      <!--提货时间-积分抵扣-买家留言-->
+      <view class='cartinfo'>
+      <picker mode="date" value="{{orderReceiveTime}}" start="{{currentTime}}" end="2060-10-01" bindchange="orderReceiveTime">
+      <view class='left'>
+      <view><text class='type'>提货时间</text><input class='type-value' name="orderReceiveTime"  value="{{orderReceiveTime}}" /></view>
+      </view>
+      <view class='right'><image src='/static/images/icon/more2.png'></image></view>
+      </picker>
+      </view>
+      <block wx:for="{{goodsList}}" wx:key="">
+      <view class='cartinfo'>
+      <view class='left'>
+      <view><text class='type'>积分抵扣</text><text class='type-value'>可用积分抵扣{{item.rank}}元</text></view>
+      </view>
+      <view class='right'><checkbox-group bindchange="checkboxChange"><checkbox value='{{item.rank}}' checked='' color='#DD2B2B'></checkbox></checkbox-group></view>
+      </view>
+      </block>
+      <view class='cartinfo'>
+      <view class='left'>
+      <view><text class='type'>买家留言</text><input class='type-value' bindinput="orderBuyerMessage" placeholder="选填（20字内）" name='orderBuyerMessage' value='{{orderBuyerMessage}}'></input></view>
+      </view>
+      </view>
+      <view class='index-border'></view>
+      <!--提交按钮-->
+      <view class='shop-price'>
+      <block wx:for="{{goodsList}}" wx:key="">
+      <text class='count'>共{{item.count}}件 合计：</text><text class='money'>￥{{item.price}}</text>
+      <text bindtap='checkbuy' data-ishot="{{item.isHot}}" data-storeid="{{item.cartStoreId}}" data-storename="{{item.cartStoreName}}" data-id="{{defaultList.addressid}}" class='place-order'>提交订单</text>
+      <!-- <navigator url='/pages/member/orderinfo/index' class='place-order'>提交订单</navigator>  -->
+      </block>
+      </view>
+      </view>

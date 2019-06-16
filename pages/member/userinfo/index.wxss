@@ -1,0 +1,14 @@
+/*个人信息头像*/
+.user-pic{text-align: center; margin:60rpx 0rpx 20rpx 0rpx;}
+.user-pic image{width: 160rpx; height: 160rpx;}
+.user-pic .upload{width: 160rpx; height: 160rpx;  position: absolute; top:60rpx; left:39.9999%;opacity: 0}
+/*个人详细信息*/
+.userinfo{margin: 20rpx 30rpx; color: #666666; font-size: 26rpx;}
+.userinfo view{ height: 100rpx; line-height: 100rpx; border-bottom: 2rpx solid #D7D7D7;}
+.userinfo view text{ padding-right: 100rpx;}
+.userinfo view .left{float: left;}
+.userinfo view .right{float: right;}
+.userinfo view .right image{width: 20rpx; height: 22rpx;}
+.modal modal view input{border: 1rpx solid #999999; height: 72rpx; line-height: 72rpx; padding-left: 20rpx; width:70%; margin:20rpx 80rpx;}
+/*色条*/
+.index-border{ height: 20rpx; margin: 20rpx auto; clear: both; background-color: #EDEDED;}

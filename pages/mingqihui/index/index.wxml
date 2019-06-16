@@ -1,0 +1,28 @@
+<!--名企汇banner-->
+<!-- <view wx:if="{{banner}}" class='news-banner'><image src="{{banner}}"></image></view> -->
+<view  class='news-banner'><image src="/static/images/mingqihuiBanner.png"></image></view>
+<!--名企汇tab栏-->
+<view class='news-nav'>
+<block wx:for="{{dataCate}}" wx:key="">
+  <text bindtap="switchTab" data-id="{{item.cateId}}" class="{{item.cateId == cateId ?'on':''}}">{{item.cateName}}</text>
+</block>
+  <!-- <navigator><text class='on'>行情报价</text></navigator>
+  <navigator><text>市场热点</text></navigator>
+  <navigator><text>综合报道</text></navigator> -->
+</view>
+<!--资讯列表-->
+<view class='news-list'>
+<block wx:if="{{dataList != ''}}">
+  <block wx:for="{{dataList}}" wx:key="">
+    <view class='storeBox' data-id="{{item.storeId}}" bindtap="newsClick">
+        <view class="storeBoxLittle" >
+          <image src='{{item.storeBrand}}' class="storeImg"></image>
+          <text class="storeName">{{item.storeName}}</text>
+        </view>
+    </view>
+  </block>
+</block>
+<block wx:else>
+    <image class="not-data" mode="widthFix" style='width:100%;' src="/static/images/icon/not_data.png"></image>
+</block>
+</view>
